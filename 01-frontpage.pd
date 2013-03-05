@@ -6,13 +6,13 @@
 
 'A Byte of Python' adalah buku gratis tentang pemrograman dalam bahasa Python. Buku ini ditujukan sebagai tutorial atau panduan untuk pemula. Jika yang Anda ketahui tentang komputer adalah bagaimana menyimpan file teks, maka buku ini untuk Anda.
 
-This book is written for the latest Python 3, even though Python 2 is the commonly found version of Python today (read more about it in [Python 2 versus 3 section](#python-2-versus-3)).
+Buku ini ditulis minimal untuk Python 3, meskipun Python 2 merupakan versi yang lebih umum ditemukan saat ini (baca lebih lanjut tentang hal ini [Python 2 lawan Python 3](#python-2-versus-3)) 
 
-## Who Reads A Byte of Python?
+## Siapa Pembaca A Byte of Python?
 
-Here are what people are saying about the book:
+Berikut kutipan beberapa orang tentang buku ini: 
 
-> The best thing i found was "A Byte of Python", which is simply a brilliant book for a beginner. It's well written, the concepts are well explained with self evident examples.
+> Hal terbaik yang saya temukan adalah "A Byte of Python", merupakan buku sederhana yang brilian untuk pemula. Buku ini ditulis dengan baik, konsep dijelaskan seksama dengan contoh yang bisa dibuktikan langsung.
 >
 > -- [_Syed Talal_ (19 years old)](http://littlepancakes.wordpress.com/2010/01/30/python)
 
