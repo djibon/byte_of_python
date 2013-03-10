@@ -1,8 +1,8 @@
 # A Byte of Python
 
-## Installation
+## Instalasi 
 
-Ensure Python (&gt;= 2.7) is installed.
+Pastikan Python (&gt;= 2.7) telah terinstal.
 
 Install Pandoc from <http://johnmacfarlane.net/pandoc/installing.html>
 
