@@ -1,24 +1,24 @@
-# Installation
+# Instalasi 
 
-## Installation on Windows
+## Instalasi di Windows 
 
-Visit <http://www.python.org/download/> and download the latest version. The installation is just like any other Windows-based software.
+Kunjungi <http://www.python.org/download/> dan unduh versi terakhir. Instalasi akan dilakukan sebagaimana perangkat lunak berbasis Windows lainnya.
 
-Caution
+Perhatian
 
-:   When you are given the option of unchecking any "optional" components, don't uncheck any.
+:   Ketika diberi pilihan untuk uncheck komponen "optional", jangan melakukan uncheck.
 
-### DOS Prompt
+### Prompt DOS 
 
-If you want to be able to use Python from the Windows command line i.e. the DOS prompt, then you need to set the PATH variable appropriately.
+Jika Anda ingin menggunakan Python dari baris perintah Windows seperti prompt DOS, Anda harus set variabel PATH secara benar. 
 
-For Windows 2000, XP, 2003 , click on `Control Panel` --- `System` --- `Advanced` --- `Environment Variables`. Click on the variable named `PATH` in the 'System Variables' section, then select `Edit` and add `;C:\Python33` (please verify that this folder exists, it will be different for newer versions of Python) to the end of what is already there. Of course, use the appropriate directory name.
+Untuk Windows 2000, XP, 2003 , klik `Control Panel` --- `System` --- `Advanced` --- `Environment Variables`. Klik pada variabel bernama `PATH` di bagian 'System Variables', lalu pilih `Edit` dan tambahkan `;C:\Python33` (mohon pastikan folder ini sudah ada, dan akan berbeda untuk versi Python yang lebih baru) di akhir isian yang sudah ada di sana. Tentu saja, gunakan nama direktori yang sesuai.
 
-For older versions of Windows, open the file `C:\AUTOEXEC.BAT` and add the line '`PATH=%PATH%;C:\Python33`' (without the quotes) and restart the system. For Windows NT, use the `AUTOEXEC.NT` file.
+Untuk versi Windows lebih lama, buka berkas `C:\AUTOEXEC.BAT` dan tambahkan baris '`PATH=%PATH%;C:\Python33`' (tanpa tanda petik) kemudian restart kembali sistemnya. Untuk Windows NT, gunakan berkas `AUTOEXEC.NT`.
 
-For Windows Vista:
+Untuk Windows Vista:
 
-#. Click Start and choose Control Panel
+#. Klik Start dan pilih Control Panel
 #. Click System, on the right you’ll see “View basic information about your computer”
 #. On the left is a list of tasks, the last of which is “Advanced system settings.” Click that.
 #. The Advanced tab of the System Properties dialog box is shown. Click the Environment Variables button on the bottom right.
