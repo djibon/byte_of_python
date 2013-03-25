@@ -19,69 +19,69 @@ Untuk versi Windows lebih lama, buka berkas `C:\AUTOEXEC.BAT` dan tambahkan bari
 Untuk Windows Vista:
 
 #. Klik Start dan pilih Control Panel
-#. Click System, on the right you’ll see “View basic information about your computer”
-#. On the left is a list of tasks, the last of which is “Advanced system settings.” Click that.
-#. The Advanced tab of the System Properties dialog box is shown. Click the Environment Variables button on the bottom right.
-#. In the lower box titled “System Variables” scroll down to Path and click the Edit button.
-#. Change your path as need be.
-#. Restart your system. Vista didn’t pick up the system path environment variable change until I restarted.
+#. Klik Sistem, di bagian kanan Anda akan lihat “View basic information about your computer”
+#. Di bagian kiri daftar tasks, muncul “Advanced system settings.” Silakan diklik.
+#. Tab Advance dari kotak dialog System Properties akan muncul. Klik tombol Environment Variable di bagian kanan bawah. 
+#. Di kotak bawah berjudul "System Variables" gulung layar ke Path dan klik tombol Edit.
+#. Ganti path sesuai yang dibutuhkan.
+#. Nyalakan kembali sistem Anda. Vista tidak akan mengambil perubahan variable lingkungan path sistem hingga saya menyalakan kembali.
 
-For Windows 7:
+Untuk Windows 7:
 
-#. Right click on Computer from your desktop and select properties or Click Start and choose Control Panel --- System and Security --- System. Click on Advanced system settings on the left and then click on the Advanced tab. At the bottom click on Environment Variables and under System variables, look for the PATH variable, select and then press Edit. 
-#. Go to the end of the line under Variable value and append `;C:\Python33`.
-#. If the value was `%SystemRoot%\system32;` It will now become `%SystemRoot%\system32;C:\Python33`
-#. Click ok and you are done. No restart is required.
+#. Klik kanan Komputer yang ada di desktop, dan pilih Properties, atau klik Start dan pilih Control Panel --- System and Security --- System. Koik di seting sistem bagian Advanced di sebelah kiri dan tekan tab Advanced. Di bagian bawah tekan Environment Variables, dan di bawah System variables, cari variabel PATH, pilih dan tekan Edit.
+#. Pergi ke akhir baris dibawah nilai Variable dan tambahkan `;C:\Python33`.
+#. Jika nilai sebelumnya adalah `%SystemRoot%\system32;` maka sekarang akan menjadi `%SystemRoot%\system32;C:\Python33`
+#. Tekan ok dan selesai. Tidak perlu dinyalakan ulang. 
 
-### Running Python prompt on Windows
+### Menjalankan prompt Python di Windows
 
-For Windows users, you can run the interpreter in the command line if you have [set the `PATH` variable appropriately](#dos-prompt).
+Untuk pengguna Windows, Anda dapat menjalankan interpreter di baris perintah jika diperlukan [set variabel `PATH` dengan benar](#dos-prompt).
 
-To open the terminal in Windows, click the start button and click 'Run'. In the dialog box, type `cmd` and press enter key.
+Untuk membuka terminal di Windows, klik tombol Start dan klik 'Run'. Di kotak dialog, ketik `cmd` dan tekan enter.
 
-Then, type `python3 -V` and ensure there are no errors.
+Lalu ketik `python3 -V` dan pastikan tidak ada pesan kesalahan.
 
-## Installation on Mac OS X
+## Instalasi di Mac OS X
 
-For Mac OS X users, open the terminal by pressing `Command+Space` keys (to open Spotlight search), type `Terminal` and press enter key.
+Untuk pengguna Mac OS X, buka terminal dengan menekan tombol `Command+Space` (untuk membuka pencarian Spotlight), ketik `Terminal` dan tekan tombol enter.
 
-Install [Homebrew](http://mxcl.github.com/homebrew/) by running:
+Install [Homebrew](http://mxcl.github.com/homebrew/) dengan menjalankan:
 
 ~~~
 ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 ~~~
 
-Then install Python 3 using:
+Lalu instal Python 3 dengan menggunakan:
 
 ~~~
 brew install python3
 ~~~
 
-Now, run `python3 -V` and ensure there are no errors.
+Lalu, jalankan `python3 -V` dan pastikan tidak ada pesan kesalahan. 
 
-## Installation on Linux
+## Instalasi di Linux 
 
-For Linux users, open the terminal by opening the `Terminal` application or by pressing `Alt + F2` and entering `gnome-terminal`. If that doesn't work, please refer the documentation or forums of your particular Linux distribution.
+Untuk pengguna Linux, buka terminal dengan membuka aplikasi `Termina;` dengan menekan `Alt + F1` dan memasukkan `gnome-terminal`. Jika hal itu tidak jalan, silakan rujuk ke dokumentasi atau forum untuk distribusi Linux yang Anda miliki.
 
-Next, we have to install the `python3` package. For example, on Ubuntu, you can use [`sudo apt-get install python3`](http://packages.ubuntu.com/search?keywords=python3&searchon=names&suite=all&section=all). Please check the documentation or forums of the Linux distribution that you have installed for the correct package manager command to run.
+Selanjutnya, kita menginstal paket `python3`. Sebagai contoh, di Ubuntu, Anda bisa menjalankan [`dsudo apt-get install python3`](http://packages.ubuntu.com/search?keywords=python3&searchon=names&suite=all&section=all). Silakan cek dokumentasi atau forum sesuai dengan distribusi Linux yang Anda gunakan untuk menjalankan perintah manajer paket yang sesuai.
 
-Once you have finished the installation, run the `python3 -V` command in a shell and you should see the version of Python on the screen:
+Setelah Anda menyelesaikan instalasi, jalankan perintah `python3 -V` dan Anda seharusnya melihat versi Python di layar:
 
 ~~~
 $ python3 -V
 Python 3.3.0
 ~~~
 
-Note
+Catatan
 
-:   `$` is the prompt of the shell. It will be different for you depending on the settings of the operating system on your computer, hence I will indicate the prompt by just the `$` symbol.
+:   `$` adalah prompt dari shell. Hal itu berbeda satu sama lain tergantung dari setingan sistem operasi di komputer Anda, dan untuk saat ini saya akan menggunakan simbol `$` sebagai prompt. 
 
-Default in new versions of your distribution?
+Baku versi baru di distribusi Anda?
 
-:   Newer distributions such as [Ubuntu 12.10 are making Python 3 the default version](https://wiki.ubuntu.com/Python/3), so check if it is already installed.
+:   Distribusi lebih baru seperti [Ubuntu 12.10 menggunakan Python 3 sebagai versi baku](https://wiki.ubuntu.com/Python/3), jadi cek terlebih dahulu sebelum melakukan langkah instalasi. 
 
-## Summary
+## Ringkasan 
 
-From now on, we will assume that you have Python 3 installed on your system.
+Sejak sekarang, saya sudah mengasumsikan Anda punya Python 3 terinstal di sistem Anda.
 
-Next, we will write our first Python 3 program.
+Berikutnya, kita akan menuliskan program Python 3 pertama kita. 
