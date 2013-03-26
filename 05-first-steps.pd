@@ -1,18 +1,18 @@
-# First Steps
+# Langkah Pertama 
 
-We will now see how to run a traditional 'Hello World' program in Python. This will teach you how to write, save and run Python programs.
+Kita sekarang akan melihat bagaimana menjalankan program tradisional 'Hello World' di Python. Langkah ini akan mengajari Anda bagaimana menulis, menyimpan dan menjalankan program Python.
 
-There are two ways of using Python to run your program - using the interactive interpreter prompt or using a source file. We will now see how to use both of these methods.
+Ada dua cara menggunakan Python untuk menjalankan program Anda - menggunakan prompt interpreter interaktif atau menggunakan berkas sumber (source file). Kita akan lihat bagaimana cara menggunakan kedua metode ini.
 
-## Using The Interpreter Prompt
+## Menggunakan Prompt Interpreter 
 
-Open the terminal in your operating system (as discussed previously in the [Installation chapter](#installation)) and then open the Python prompt by typing `python3` and pressing enter key.
+Buka terminal di sistem operasi Anda (sebagaimana telah didiskusikan sebelumnya di [Bab Instalasi](#installation)) lalu buka prompt Python dengan mengetikkan `python3` dan menekan tombol enter.
 
-Once you have started `python3`, you should see `>>>` where you can start typing stuff. This is called the *Python interpreter prompt*.
+Sekali Anda mulai `python3`, Anda akan melihat `>>>` di mana Anda dapat mulai mengetikkan sesuatu. Ini disebut sebagai *prompt interpreter Python*.
 
-At the Python interpreter prompt, type `print('Hello World')` followed by the `enter` key. You should see the words `Hello World` as output.
+Di prompt interpreter Python, ketik `print('Hello World')` lalu tekan tombol `enter`. Anda seharusnya melihat keluaran `Hello World` 
 
-Here is an example of what you should be seeing, when using a Mac OS X computer. The details about the Python software will differ based on your computer, but the part from the prompt (i.e. from `>>>` onwards) should be the same regardless of the operating system.
+Berikut contoh apa yang seharusnya Anda lihat, saat menggunakan komputer Mac OS X. Detail tentang perangkat lunak Python, tentu akan berbeda berdasarkan komputer Anda, tapi bagian prompt (contoh dari `>>>` dan berikutnya) seharusnya sama dengan mengabaikan sistem operasi yang Anda miliki.
 
 ~~~
 $ python3
@@ -24,128 +24,129 @@ hello world
 >>> 
 ~~~
 
-Notice that Python gives you the output of the line immediately! What you just entered is a single Python *statement*. We use `print` to (unsurprisingly) print any value that you supply to it. Here, we are supplying the text `Hello World` and this is promptly printed to the screen.
+Perhatikan bahwa Python memberikan keluaran di baris berikutnya secara langsung! Yang baru Anda masukkan adalah *statemen* Python tunggal. Kita menggunakan `print` untuk (secara mengejutkan) menampilkan setiap nilai yang Anda masukkan. Di sini kita memasukkan teks `Hello World` dan secara langsung tampil di layar.
 
-How to Quit the Interpreter Prompt
+Bagaimana Berhenti dari Prompt Interpreter
 
-:   If you are using a Linux or Unix shell, you can exit the interpreter prompt by pressing `ctrl-d` or entering `exit()` (note: remember to include the parentheses, '()') followed by the `enter` key. If you are using the Windows command prompt, press `ctrl-z` followed by the `enter` key.
+:   Jika Anda menggunakan shell Linux atau Unix, Anda dapat keluar dari prompt interpreter dengan menekan `ctrl-d` atau memasukkan perintah `exit()` (catatan: ingat selalu untuk memasukkan tanda kurung, '()') diikuti dengan penekanan tombol `enter`. Jika Anda menggunakan baris perintah Windows, tekan `ctrl-z` diikuti tombol `enter`.
 
-## Choosing An Editor
+## Memilih Editor
 
-We cannot type out our program at the interpreter prompt every time we want to run something, so we have to save them in files and can run our programs any number of times.
+Kita tidak dapat menuliskan program di baris interpreter setiap kali ingin menjalankan sesuatu, jadi kita harus menuliskannya di dalam berkas dan kita dapat menjalankan program kita selama beberapa kali.
 
-To create our Python source files, we need an editor software where you can type and save. A good programmer's editor will make your life easier in writing the source files. Hence, the choice of an editor is crucial indeed. You have to choose an editor as you would choose a car you would buy. A good editor will help you write Python programs easily, making your journey more comfortable and helps you reach your destination (achieve your goal) in a much faster and safer way.
+Untuk membuat berkas kode program Python, kita perlu perangkat lunak berupa editor sehingga kita dapat menulis dan menyimpannya. Editor programmer Python yang baik akan membuat hidup Anda lebih mudah dalam menulis berkas kode program. Oleh karena itu, pemilihan editor sifatnya sangat penting. Anda harus memilih editor sebagaimana memilih mobil untuk dikendarai. Editor yang bagus akan membantu Anda menulis program Python secara lebih mudah, dan membuat perjalanan Anda lebih nyaman dalam meraih tujuan Anda secara lebih cepat dan aman.
 
-One of the very basic requirements is *syntax highlighting* where all the different parts of your Python program are colorized so that you can *see* your program and visualize its running.
+Salah satu dari syarat dasar adalah *syntax highlighting* atau pewarnaan sintaks di mana bagian program Python Anda akan diwarnai secara berbeda sehingga Anda dapat benar-benar *melihat* program Anda dan memvisualisasikan bagaimana jika program tersebut berjalan.
 
-If you have no idea where to start, I would recommend using [Komodo Edit](http://www.activestate.com/komodo-edit/downloads) software which is available on Windows, Mac OS X and Linux.
+Jika Anda tidak tahu darimana memulai, Saya rekomendasikan untuk menggunakan perangkat lunak editor [Komodo Edit](http://www.activestate.com/komodo-edit/downloads) yang tersedia untuk Windows, Mac OS X dan Linux.
 
-If you are using Windows, **do not use Notepad** - it is a bad choice because it does not do syntax highlighting and also importantly it does not support indentation of the text which is very important in our case as we will see later. Good editors such as Komodo Edit will automatically do this.
+Jika Anda menggunakan Windows, **jangan menggunakan Notepad** - perangkat lunak tersebut buruk untuk dipilih karena tidak ada pewarnaan sintaks dan lebih penting lagi, tidak mendukung indentasi teks, yang merupakan syarat sangat penting dalam kasus ini, yang nanti akan kita lihat. Editor yang bagus seperti Komodo Edit akan melakukan ini secara otomatis.
 
-If you are an experienced programmer, then you must be already using [Vim](http://www.vim.org/) or [Emacs](http://www.gnu.org/software/emacs/). Needless to say, these are two of the most powerful editors and you will benefit from using them to write your Python programs. I personally use both for most of my programs, and have even written an [entire book on Vim](http://www.swaroopch.com/notes/vim). In case you are willing to take the time to learn Vim or Emacs, then I highly recommend that you do learn to use either of them as it will be very useful for you in the long run. However, as I mentioned before, beginners can start with Komodo Edit and focus the learning on Python rather than the editor at this moment.
 
-To reiterate, please choose a proper editor - it can make writing Python programs more fun and easy.
+Jika Anda merupakan programmer yang berpengalaman, Anda pasti sudah menggunakan [Vim](http://www.vim.org/) atau [Emacs](http://www.gnu.org/software/emacs/). Tanpa perlu banyak pembahasan, kedua perangkat lunak ini merupakan editor yang paling berkualitas dan Anda akan memperoleh banyak keuntungan jika menggunakannya untuk menulis program Python. Jika Anda mau menyediakan atau punya waktu untuk belajar Vim atau Emacs, saya menganjurkan untuk mempelajarinya karena akan sangat bermanfaat dalam jangka panjang. Bagaimanapun juga, sebagaimana saya sebutkan sebelumnya, pemula dapat mulai dengan menggukana Komodo Edit dan fokus belajar Python daripada belajar editor untuk saat ini.
 
-For Vim users
+Sebagai pengingat kembali, silakan pilih editor yang layak untuk Anda - Hal itu dapat membuat penulisan program Python menjadi lebih menyenangkan dan mudah.
 
-:   There is a good introduction on how to [make Vim a powerful Python IDE by John M Anderson](http://blog.sontek.net/blog/detail/turning-vim-into-a-modern-python-ide). Also recommended is the [jedi-vim plugin](https://github.com/davidhalter/jedi-vim) and my [own dotvim configuration](https://github.com/swaroopch/dotvim).
+Untuk Pengguna Vim
 
-For Emacs users
+:   Ada pengenalan yang bagus tentang bagaimana [membuat Vim menjadi Python IDE yang bagus oleh John M Anderson](http://blog.sontek.net/blog/detail/turning-vim-into-a-modern-python-ide). Yang juga direkomendasikan adalah [jedi-vim plugin](https://github.com/davidhalter/jedi-vim) dan [konfigurasi dotvim saya](https://github.com/swaroopch/dotvim).
 
-:   There is a good introduction on how to [make Emacs a powerful Python IDE by Pedro Kroger](http://pedrokroger.net/2010/07/configuring-emacs-as-a-python-ide-2/). Also recommended is [BG's dotemacs configuration](https://github.com/ghoseb/dotemacs).
+Untuk Pengguna Emacs
 
-## Using A Source File
+:   Ada pengenalan yang bagus tentang bagaimana [membuat Emacs menjadi Python IDE yang bagus oleh Pedro Kroger](http://pedrokroger.net/2010/07/configuring-emacs-as-a-python-ide-2/). Yang juga direkomendasikan adalah [konfigurasi dotemacs BG](https://github.com/ghoseb/dotemacs).
 
-Now let's get back to programming. There is a tradition that whenever you learn a new programming language, the first program that you write and run is the 'Hello World' program - all it does is just say 'Hello World' when you run it. As Simon Cozens (the author of the amazing 'Beginning Perl' book) puts it, it is the "traditional incantation to the programming gods to help you learn the language better."
+## Menggunakan Berkas Program 
 
-Start your choice of editor, enter the following program and save it as `hello.py`.
+Sekarang kita kembali ke pemrograman. Ada tradisi setiap Anda belajar bahasa pemrograman baru, program pertama yang Anda tulis dan jalankan adalah program 'Hello World' - program itu hanyalah menampilkan 'Hello World' saat Anda menjalankannya. Sebagaimana dikatakan oleh Simon Cozens (pengarang buku yang sangat menakjubkan 'Beginning Perl'), itu adalah "mantra tradisional dewa pemrograman yang membantu Anda belajar bahasa tersebut secara lebih baik."
 
-If you are using Komodo Edit, click on `File` --- `New` --- `New File`, type the lines:
+Pilihlah Editor Anda, dan masuk ke dalam program tersebut, simpan dengan nama `hello.py`.
+
+Jika Anda menggunakan Komodo Edit, klik di `File` --- `New` --- `New File`, ketik baris berikut:
 
 ~~~python
 print('Hello World')
 ~~~
 
-In Komodo Edit, do `File` --- `Save` to save to a file.
+Di Komodo Edit, klik `File` --- `Save` untuk menyimpan berkas. 
 
-Where should you save the file? To any folder for which you know the location of the folder. If you don't understand what that means, create a new folder and use that location to save and run all your Python programs:
+Dimana Anda harus simpan berkasnya? Di setiap folder yang Anda sendiri tahu persis di mana letak folder tersebut. Jika Anda tidak tahu apa maksudnya, buat folder baru dan gunakan folder tersebut untuk menyimpan dan menjalankan semua program Python Anda:
 
-- `C:\\py` on Windows
-- `/tmp/py` on Linux
-- `/tmp/py` on Mac OS X
+- `C:\\py` di  Windows
+- `/tmp/py` di Linux
+- `/tmp/py` di Mac OS X
 
-To create a folder, use the `mkdir` command in the terminal, for example, `mkdir /tmp/py`.
+Untuk membuat folder, gunakan perinta `mkdir` di terminal, contohnya `mkdir /tmp/py`.
 
-Important
+Penting
 
-:   Always ensure that you give it the file extension of `.py`, for example, `foo.py`.
+:   Selalu pastikan Anda memberi nama ekstensi berkasnya `.py`, sebagai contoh `foo.py`.
 
-In Komodo Edit, click on `Tools` --- `Run Command`, type `python3 hello.py` and click on `Run` and you should see the output printed like in the screenshot below.
+Di Komodo Edit, klik `Tools` --- `Run Command`, ketik `python3 hello.py` dan klik `Run` Anda akan melihat keluaran tercetak sebagaimana tangkapan layar di bawah ini. 
 
-![Screenshot of Komodo Edit with the Hello World program](assets/komodo-edit-hello-world.png)
+![Tangkapan layar dari Komodo Edit untuk program Hello World](assets/komodo-edit-hello-world.png)
 
-The best way, though, is to type it in Komodo Edit but to use a terminal:
+Jalan terbaik adalah, tidak mengetikkannya di Komodo Edit, namun menggunakan terminal:
 
-#. Open a terminal as explained in the [Installation chapter](#installation).
-#. *C*hange *d*irectory where you saved the file, for example, `cd /tmp/py`
-#. Run the program by entering the command `python3 hello.py`.
+#. Buka Terminal sebagaimana telah dijelaskan di [Bab Instalasi](#installation).
+#. *G*anti *d*irektori di mana Anda menyimpan berkas, sebagai contoh, `cd /tmp/py`
+#. Jalankan program dengan mengetikkan perintah `python3 hello.py`.
 
-The output is as shown below.
+Keluaran akan ditampilkan sebagai berikut.
 
 ~~~
 $ python3 hello.py
 Hello World
 ~~~
 
-If you got the output as shown above, congratulations! - you have successfully run your first Python program. You have successfully crossed the hardest part of learning programming, which is, getting started with your first program!
+Jika Anda memperoleh keluaran sebagaimana yang ditampilkan di atas, selamat! - Anda telah berhasil menjalankan program Python pertama Anda. Anda telah berhasil melewati bagian yang paling sulit dari belajar pemrograman, yakni, memulai program pertama.
 
-In case you got an error, please type the above program *exactly* as shown above and run the program again. Note that Python is case-sensitive i.e. `print` is not the same as `Print` - note the lowercase `p` in the former and the uppercase `P` in the latter. Also, ensure there are no spaces or tabs before the first character in each line - we will [see why this is important later](#indentation).
+Jika Anda memperoleh pesan kesalahan, mohon ketikkan lagi program di atas *sama persis* seperti ditampilkan di atas dan jalankan program kembali. Mohon dicatat bawah Python sangat peka terhadap huruf besar kecil, seperti `print` tidak sama dengan `Print` - catat bahwa `p` di kata pertama adalah huruf kecil dan `p` di kata berikutnya adalah huruf besar. Juga, pastikan tidak ada spasi atau tab sebeulm huruf pertama di tiap bari - kita akan [lihat nanti kenapa ini penting](#indentation).
 
-**How It Works**
+**Bagaimana Cara Kerjanya**
 
-A Python program is composed of *statements*. In our first program, we have only one statement. In this statement, we call the `print` *function* which just prints the text `'Hello World'`. We will learn about functions in detail in a [later chapter](#functions) - what you should understand now is that whatever you supply in the parentheses will be printed back to the screen. In this case, we supply the text `'Hello World'`.
+Program Python disusun atas *statemen*. Di Program pertama kita, kita hanya punya satu statemen. Dalam statemen ini, kita sebut sebagai *fungsi* `print` yang hanya mencetak teks `Hello World`. Kita akan belajar tentang fungsi secara lebih mendalam di [bab berikutnya](#functions_ - Apa yang perlu Anda pahami sekarang adalah setiap yang Anda ketikkan setelah tanda petik akan dikeluarkan kembali di layar. Dalam kasus ini kita mengetikkan teks '`Hello World`'
 
-### Executable Python Programs
+### Program Python yang bisa Dieksekusi 
 
-This applies only to Linux and Unix users but Windows users should know this as well.
+Ini hanya berlaku untuk pengguna Linux dan Unix, tapi pengguna Windows juga perlu tahu hal ini.
 
-Every time, you want to run a Python program, we have to explicitly call `python3 foo.py`, but why can't we run it just like any other program on our computer? We can achieve that by using something called the *hashbang* line.
+Setiap kali, Anda ingin menjalankan program Python, Anda harus secara eksplisit mengetikkan `python3 foo.py`, tapi kenapa kita tidak menjalankannya seperti program lain di komputer? Kita dapat melakukannya dengan menggunakan sesuatu yang disebut baris *hashbang*.
 
-Add the below line as the *first line* of your program:
+Tambahkan baris berikut di *bari pertama* program Anda:
 
 ~~~python
 #!/usr/bin/env python3
 ~~~
 
-So, your program should look like this now:
+Jadi program Anda akan terlihat seperti ini sekarang:
 
 ~~~python
 #!/usr/bin/env python3
 print('Hello World')
 ~~~
 
-Second, we have to give the program executable permission using the `chmod` command then *run* the source program.
+Kedua, kita harus memberikan program tersebut hak eksekusi dengan perintah `chmod` lalu *jalankan* berkas program.
 
-The chmod command is used here to *ch*ange the *mod*e of the file by giving e*x*ecute permission to *a*ll users of the system.
+Perintah chmod yang digunakan di sini adalah untuk *me*ngubah *mod*e dari file dengan memberikan hak e*k*sekusi untuk *s*emua pengguna di dalam sistem.
 
 ~~~
 $ chmod a+x hello.py
 ~~~
 
-Now, we can run our program directly because our operating system calls `/usr/bin/env` which in turn will find our Python 3 software and hence knows how to run our source file:
+Sekarang, kita dapat menjalankan program secara langsung sebab sistem operasi akan memanggil `/usr/bin/env` yang akan menemukan Python 3 yang sudah kita pasang, sehingga tahu bagaimana menjalankan berkas program tersebut:
 
 ~~~
 $ ./hello.py
 Hello World
 ~~~
 
-We use the `./` to indicate that the program is located in the current folder.
+Kita menggunakan `./` untuk mengindikasikan bahwa program berada di folder saat ini. 
 
-To make things more fun, you can rename the file to just `hello` and run it as `./hello` and it will still work since the system knows that it has to run the program using the interpreter whose location is specified in the first line in the source file.
+Untuk menjadikannya lebih menarik, Anda dapat mengganti nama berkas tersebut hanya dengan nama `hello` dan menjalankannya dengan `./hello` dan tetap akan jalan mengingat sistem sudah tahu bahwa untuk menjalankan program tersebut harus menggunakan interpreter yang lokasinya sudah ditentukan di baris pertama berkas program.
 
-So far, we have been able to run our program as long as we know the exact path. What if we wanted to be able to run the program from folder? You can do this by storing the program in one of the folders listed in the `PATH` environment variable.
+Sejauh ini, kita sudah menjalankan program kita sepanjang kita tahu path-nya secara tepat. Bagaimana jika kita ingin menjalankan program dari folder? Anda dapat melakukannya dengan menyimpan program di satu folder yang terdaftar di variabel lingkungan `PATH`.
 
-Whenever you run any program, the system looks for that program in each of the folders listed in the `PATH` environment variable and then runs that program. We can make this program available everywhere by simply copying this source file to one of the directories listed in `PATH`.
+Setiap Anda menjalankan program apapun, sistem akan mencari program tersebut di tiap folder yang terdaftar dalam variabel lingkungan `PATH` dan menjalankan program tersebut. Kita dapat membuat program ini tersedia di mana saja dengan menyalin berkas program ini ke dalam direktori-direktori yang terdaftar di `PATH`.
 
 ~~~
 $ echo $PATH
@@ -155,26 +156,26 @@ $ hello
 Hello World
 ~~~
 
-We can display the `PATH` variable using the `echo` command and prefixing the variable name by `$` to indicate to the shell that we need the value of this "environment variable". We see that `/home/swaroop/bin` is one of the directories in the PATH variable where *swaroop* is the username I am using in my system. There will usually be a similar directory for your username on your system.
+Kita dapat menampilkan variabel `PATH` dengan menggunakan perintah `echo` dan memberikan awalan nama variabel dengan `$` untuk mengindikasikan kepada shell bahwa kita membutuhkan nilai dari "variabel lingkungan". Kita lihat bahwa `/home/swaroop/bin` ada di salah satu direktori di variabel PATH di mana *swaroop* adalah nama user yang saya gunakan di dalam sistem. Biasanya ada direktori yang sama persis untuk username Anda di dalam sistem.
 
-If you want to add a directory of your choice to the `PATH` variable - this can be done by running `export PATH=$PATH:/home/swaroop/mydir` where `'/home/swaroop/mydir'` is the directory I want to add to the `PATH` variable.
+Jika Anda ingin menambahkan direktori pilihan Anda ke dalam variabel `PATH` - ini dapat dilakukan dengan menjalankan perintah `export PATH=$PATH:/home/swaroop/mydir` di mana `'/home/swaroop/mydir'` adalah direktori yang ingin saya tambahkan ke dalam variabel `PATH`.
 
-This method is very useful if you want to write commands you can run anytime, anywhere. It is like creating your own commands just like `cd` or any other commands that you use in the terminal.
+Metode ini sangat bermanfaat jika Anda ingin menuliskan perintah yang dapat Anda jalankan tiap saat, di mana saja. Hal ini seperti membuat perintah Anda sendiri seperti `cd` atau perintah lain yang Anda gunakan di terminal.
 
-## Getting Help
+## Memperoleh Bantuan 
 
-If you need quick information about any function or statement in Python, then you can use the built-in `help` functionality. This is very useful especially when using the interpreter prompt. For example, run `help(print)` - this displays the help for the print function which is used to print things to the screen.
+Jika Anda butuh informasi cepat tentang fungsi atau statemen di Python, Anda dapat menggunakan fungsi `help` yang sudah built-in. Hal ini sangat bermanfaat terutama saat menggunakan prompt interpeter. Sebagai contoh, jalankan perintah `help(print)` - akan menampilkan bantuan dari fungsi print yang digunakan untuk mencetak semua masukan ke dalam layar.
 
-Note
+Catatan
 
-:   Press `q` to exit the help.
+:   tekan `q` untuk keluar dari bantuan.
 
-Similarly, you can obtain information about almost anything in Python. Use `help()` to learn more about using `help` itself!
+Mirip dengan hal tersebut, Anda dapat memperoleh informasi segala sesuatu tentang Python. Cukup gunakan `help()` untuk mempelajari lebih lanjut tentang bagaimana menggunakan `help` itu sendiri!
 
-In case you need to get help for operators like `return`, then you need to put those inside quotes such as `help('return')` so that Python doesn't get confused on what we're trying to do.
+Jika Anda ingin memperoleh bantuan operator seperti `return`, Anda harus meletakknya di dalam tanda petik seperti `help('return')` sehingga Python tidak bingung tentang apa yang Anda ingin lakukan.
 
-## Summary
+## Ringkasan 
 
-You should now be able to write, save and run Python programs at ease.
+Anda seharusnya sudah mampu menulis, menyimpan dan menjalankan program Python secara mudah.
 
-Now that you are a Python user, let's learn some more Python concepts.
+Sekarang Anda adalah pengguna Python, mari belajar beberapa konsep Python lebih lanjut.
