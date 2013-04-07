@@ -33,4 +33,8 @@ Konversi berkas sumber ke dalam format EPUB (ebook):
 
 ## Mengedit
 
-Jika Anda menggunakan editor VIM, Anda bisa instal plugin [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc). Bagaimanapun juga ada kelemahannya - untuk bab yang panjang, plugin tersebut membuat vim menjadi pelan, jadi saya hanya mengeditnya dalam mode teks murni (`:set ft=`), tepi saat review saya menggunakan `pandoc` (`:set ft=pandoc`) 
+Jika Anda menggunakan editor VIM, Anda bisa instal plugin [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc). Bagaimanapun juga ada kelemahannya - untuk bab yang panjang, plugin tersebut membuat vim menjadi pelan, jadi saya hanya mengeditnya dalam mode teks murni (`:set ft=`), tepi saat review saya menggunakan `pandoc` (`:set ft=pandoc`)
+
+## Terjemahan
+
+Terjemahan Bahasa Indonesia ini disusun oleh Ahmad Sofyan asofyan (a) gmail.com
