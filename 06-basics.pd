@@ -96,15 +96,15 @@ usia = 20
 nama = 'Swaroop'
 
 print('{0} masih {1} tahun ketika dia menulis buku ini'.format(name, age))
-print('Kenapa {0} bermain-main dengan python itu?'.format(name))
+print('Kenapa {0} bermain-main dengan python?'.format(name))
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 str_format.py
-Swaroop was 20 years old when he wrote this book
-Why is Swaroop playing with that python?
+Swaroop masih 20 tahun ketika dia menulis buku ini
+Kenapa Swaroop bermain-main dengan python?
 ~~~
 
 Bagaimana Cara Kerjanya:
@@ -122,7 +122,7 @@ usia = 20
 nama = 'Swaroop'
 
 print('{} masih {} tahun ketika dia menulis buku ini'.format(name, age))
-print('Kenapa {} bermain-main dengan python itu?'.format(name))
+print('Kenapa {} bermain-main dengan python?'.format(name))
 ~~~
 
 yang akan menghasilkan output yang sama persis dengan program sebelumnya.
@@ -133,49 +133,49 @@ Apa yang Python lakukan dalam metode `format` merupakan pengganti nilai tiap-tia
  desimal (.) presisi 3 untuk float '0.333'
 >>> '{0:.3}'.format(1/3)
  isi dengan garis bawah (_) dengan teks ditengah 
- (^) to 11 width '___hello___'
->>> '{0:_^11}'.format('hello')
- keyword-based 'Swaroop wrote A Byte of Python'
->>> '{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python')
+ (^) dengan panjang 11 '___halo___'
+>>> '{0:_^11}'.format('halo')
+ basis-kata kunci 'Swaroop menulis A Byte of Python'
+>>> '{nama} menulis {buku}'.format(nama='Swaroop', buku='A Byte of Python')
 ~~~
 
-## Variable
+## Variabel
 
-Using just literal constants can soon become boring - we need some way of storing any information and manipulate them as well. This is where *variables* come into the picture. Variables are exactly what the name implies - their value can vary, i.e.,  you can store anything using a variable. Variables are just parts of your computer's memory where you store some information. Unlike literal constants, you need some method of accessing these variables and hence you give them names.
+Penggunaan konstanta literal segera membuat kita bosan - kita ingin mencari cara bagaimana menyimpan informasi dan juga memanipulasinya. Segera sesuatu bernama *variabel* muncul dalam bayangan. Variabel persei seperti namanya - nilainya sangat beragam, dengan kata lain Anda dapat menyimpan apa saja dengan menggunakan variabel. Variabel seetulnya hanyalah merupakan bagian dari memori komputer tempat Anda menyimpan beberapa informasi. Tidak seperti konstanta literal, Anda perlu beberapa metode untuk mengakses nilai variabel ini, sehingga Anda perlu menamainya.
 
-## Identifier Naming
+## Nama Penunjuk Identitas 
 
-Variables are examples of identifiers. *Identifiers* are names given to identify *something*. There are some rules you have to follow for naming identifiers:
+Variabiel adalah contoh penunjuk identitas. *Penunjuk Identitas* disematkan untuk suatu nama yang memberikan identitas terhadap *sesuatu*. Ada beberapa aturan yang harus diikuti untuk memberi nama identitas.
 
-- The first character of the identifier must be a letter of the alphabet (uppercase ASCII or lowercase ASCII or Unicode character) or an underscore ('_').
-- The rest of the identifier name can consist of letters (uppercase ASCII or lowercase ASCII or Unicode character), underscores ('_') or digits (0-9).
-- Identifier names are case-sensitive. For example, `myname` and `myName` are **not** the same. Note the lowercase `n` in the former and the uppercase `N` in the latter.
-- Examples of *valid* identifier names are `i`, `__my_name`, `name_23`. Examples of ''invalid'' identifier names are `2things`, `this is spaced out`, `my-name`, `>a1b2_c3` and `"this_is_in_quotes"`.
+- Karakter pertama dari identitas harus huruf (huruf besar ASCII atau huruf kecil ASCII atau karakter Unicode) atau garis bawah ('_')
+- Karakter sisa dari nama penanda identtitas dapat terdiri dari huruf (huruf besar ASCII atau huruf kecil ASCII atau karakter Unicode), garis bawah ('_') atau digit (0-9).
+- Penanda identitas bersifat case-sensitive (peka terhadap huruf besar dan kecil). Sebagai contoh, `namaku` dan `Namaku` *tidak sama*. Perhatikan huruf kecil `n` pada kata pertama dan huruf besar `N` pada kata kedua.
+- Contoh dari penanda identitas yang *valid* adalah `i`, `__nama_ku`,`nama_23`. Contoh penanda identitas yang ''invalid'' adalah `2hal`,`ini dengan spasi`,`nama-ku`,`>a1b2_c3` dan `"ini_dalam_tanda_kutip"`.
 
-## Data Types
+## Tipe Data 
 
-Variables can hold values of different types called **data types**. The basic types are numbers and strings, which we have already discussed. In later chapters, we will see how to create our own types using [classes](#object-oriented-programming).
+Variabel dapat menyimpan nilai dari jenis data yang berbeda-beda yang dinamakan **tipe data**. Tipe dasarnya adalah nomor dan string, yang kita sudah diskusikan sebelumnya. Di bab berikutnya, kita akan lihat bagaimana menciptakan data tipe kita sendiri dengan menggunakan [classes](#object-oriented-programming).
 
-## Object
+## Obyek
 
-Remember, Python refers to anything used in a program as an *object*.  This is meant in the generic sense. Instead of saying 'the *something*', we say 'the *object*'.
+Ingat, Python mereferensikan segala sesuatu yang digunakan di dalam program sebagai *obyek*. Ini hanya dimaksudkan dalam perasaan umum saja. Alih-alih menyebut '*sesuatu*' kita sebut '*obyek*'.
 
-Note for Object Oriented Programming users
+Catatn untuk pengguna Pemrograman Berorientasi Obyek (Object Oriented Programming) 
 
-:   Python is strongly object-oriented in the sense that everything is an object including numbers, strings and functions.
+:   Python sangat kuat di dalam object-oriented dalam kaitan segala sesuatu adalah obyek termasuk nomor, string dan fungsi.
 
-We will now see how to use variables along with literal constants. Save the following example and run the program.
+Kita akan melihat bagaimana menggunakan variabel sejalan dengan konstanta literal. Simpan contoh berikut dan jalankan programnya.
 
-## How to write Python programs
+## Bagaimana menulis program Python
 
-Henceforth, the standard procedure to save and run a Python program is as follows:
+Cara yang baku untuk menyimpan dan menjalankan program Python adalah seperti ini:
 
-#. Open your editor of choice, such as Komodo Edit.
-#. Type the program code given in the example.
-#. Save it as a file with the filename mentioned.
-#. Run the interpreter with the command `python3 program.py` to run the program.
+#. Buka editor pilihan Anda, seperti Komodo Edit.
+#. Ketik kode porgram seperti yang diberikan dalam contoh.
+#. Simpan sebagai berkas dengan nama seperti yang disebutkan.
+#. Jalankan interpreter dengan perintah `python3 program.py` untuk menjalankan program
 
-## Example: Using Variables And Literal Constants
+## Contoh: Menggunakan Variabel dan Konstanta Literal.
 
 ~~~python
  Filename : var.py
@@ -184,42 +184,42 @@ print(i)
 i = i + 1
 print(i)
 
-s = '''This is a multi-line string.
-This is the second line.'''
+s = '''Ini adalah string dengan baris lebih dari satu.
+Ini baris kedua.'''
 print(s)
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 var.py
 5
 6
-This is a multi-line string.
-This is the second line.
+Ini adalah string dengan baris lebih dari satu.
+Ini baris kedua.
 ~~~
 
-How It Works:
+Bagaimana cara kerjanya:
 
-Here's how this program works. First, we assign the literal constant value `5` to the variable `i` using the assignment operator (`=`). This line is called a statement because it states that something should be done and in this case, we connect the variable name `i` to the value `5`.  Next, we print the value of `i` using the `print` function which, unsurprisingly, just prints the value of the variable to the screen.
+Berikut bagaimana program tersebut bekerja. Pertama, kita tentukan nilai konstanta literalnya `5` ke dalam variabel `i` lewat penentuan operator (`=`). Baris ini disebut statemen/pernyataan sebab menyatakan sesuatu yang harus dikerjakan  dan dalam kasus ini, kita menghubungkan variabel bernama `i` dengan nilai `5`. Kemudian kita menampilkan nilai `i` dengan fungsi `print` yang secara mengejutkan hanya menampilkan nilai variabel ke dalam layar.
 
-Then we add `1` to the value stored in `i` and store it back. We then print it and expectedly, we get the value `6`.
+Kemudian kita menambahkan `1` ke dalam nilai yang disimpan di dalam `i` dan menyimpannya lagi. Kemudian kita menampilkannya lagi, dan seperti yang sudah kita duga, kita mendapatkan nilai `6`.
 
-Similarly, we assign the literal string to the variable `s` and then print it.
+Berikutnya juga mirip, kita menentikan string literal ke dalam variabel `s` lalu menampilkannya.
 
-Note for static language programmers
+Catatan untuk programmer bahasa satatik
 
-:   Variables are used by just assigning them a value. No declaration or data type definition is needed/used.
+:   Variabel digunakan hanya untuk memberikan nilai terhadapnya. Tidak perlu menggunakan deklarasi atau definisi tipe data.
 
-### Logical And Physical Line
+### Baris Logis dan Fisik
 
-A physical line is what you *see* when you write the program. A logical line is what *Python sees* as a single statement. Python implicitly assumes that each *physical line* corresponds to a *logical line*.
+Baris fisik adalah apa yang Anda *lihat* saat Anda menulis program. Sedangkan baris logis adalah apa yang *Python lihat* sebagai suatu statemen tunggal. Python secara implisit mengasumsikan bahwa setiap *baris fisik* berhubungan dengan *baris logis*.
 
-An example of a logical line is a statement like `print('Hello World')` - if this was on a line by itself (as you see it in an editor), then this also corresponds to a physical line.
+Sebagai contoh baris logis dalam statemen seperti `print('Hello World')` - jika ini berada dalam satu baris dirinya sendiri (sebagaimana yang Anda lihat di editor), maka ini juga berhubungan dengan baris fisik.
 
-Implicitly, Python encourages the use of a single statement per line which makes code more readable.
+Secara implisit, Python mendorong penggunaan statemen tunggal per baris yang dapat membuat kode lebih terbaca.
 
-If you want to specify more than one logical line on a single physical line, then you have to explicitly specify this using a semicolon (`;`) which indicates the end of a logical line/statement. For example,
+Jika Anda ingin menentukan lebih dari satu baris logis dalam satu baris fisik, Anda harus secara spesifik menentukannya dalam titik koma (`;`) yang mengindikasikan akhir dari baris logis/statemen. SSebagai contoh,
 
 ~~~python
 i = 5
