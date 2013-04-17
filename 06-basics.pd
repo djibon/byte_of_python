@@ -219,21 +219,21 @@ Sebagai contoh baris logis dalam statemen seperti `print('Hello World')` - jika 
 
 Secara implisit, Python mendorong penggunaan statemen tunggal per baris yang dapat membuat kode lebih terbaca.
 
-Jika Anda ingin menentukan lebih dari satu baris logis dalam satu baris fisik, Anda harus secara spesifik menentukannya dalam titik koma (`;`) yang mengindikasikan akhir dari baris logis/statemen. SSebagai contoh,
+Jika Anda ingin menentukan lebih dari satu baris logis dalam satu baris fisik, Anda harus secara spesifik menentukannya dalam titik koma (`;`) yang mengindikasikan akhir dari baris logis/statemen. Sebagai contoh,
 
 ~~~python
 i = 5
 print(i)
 ~~~
 
-is effectively same as
+secara efektif sama dengan
 
 ~~~python
 i = 5;
 print(i);
 ~~~
 
-and the same can be written as
+dan sama juga jika ditulis dengan
 
 ~~~python
 i = 5; print(i);
@@ -245,70 +245,70 @@ or even
 i = 5; print(i)
 ~~~
 
-However, I **strongly recommend** that you stick to **writing a maximum of a single logical line on each single physical line**. The idea is that you should never use the semicolon. In fact, I have *never* used or even seen a semicolon in a Python program.
+Bagaimanapun juga, saya *sangat menyarankan* Anda tetap **menulis hingga maksimum satu baris untuk satu logika tunggal dalam satu baris fisik**. Idenya Anda tidak pernah menggunakan titik koma. Faktanya, saya *tidak pernah* atau melihat titik koma di program Python.
 
-There is one kind of situation where this concept is really useful : if you have a  long line of code, you can break it into multiple physical lines by using the backslash. This is referred to as **explicit line joining**:
+Ada satu kondisi di mana konsep ini sangat bermanfaat: jika Anda memiliki baris kode yang panjang, Anda dapat memecahnya ke dalam bberapa baris fisik dengan menggunakan garis miring terbalik (backslash). Ini direferensikan dengan nama **penggabungan baris eksplisit**:
 
 ~~~python
-s = 'This is a string. \
-This continues the string.'
+s = 'Ini adalah string. \
+Ini melanjutkan string.'
 print(s)
 ~~~
 
-This gives the output:
+Perintah tersebut akan menghasilkan keluaran:
 
 ~~~
-This is a string. This continues the string.
+Ini adalah string. Ini melanjutkan string.
 ~~~
 
-Similarly,
+Mirip dengan hal tersebut,
 
 ~~~python
 print\
 (i)
 ~~~
 
-is the same as
+sama dengan
 
 ~~~python
 print(i)
 ~~~
 
-Sometimes, there is an implicit assumption where you don't need to use a backslash. This is the case where the logical line has a starting parentheses, starting square brackets or a starting curly braces but not an ending one. This is called **implicit line joining**. You can see this in action when we write programs using [lists](#list) in later chapters.
+Kadang, muncul asumsi implisit yang tidak membutuhkan garis miring terbalik. Dalam kasus ini dimana baris logisnya dimulai dengan kurung kurawal, dimulai dengan kurung kotak atau dimulai dengan curly braces (~), tapi tidak diletakkan di akhir baris. Ini dinamakan **penggabungan baris implisit***. Anda dapat melihat penerapan hal ini saat kita menulis program dengan menggunakan [lists](#list) di bab berikutnya.
 
-### Indentation
+### Indentasi 
 
-Whitespace is important in Python. Actually, **whitespace at the beginning of the line is important**. This is called **indentation**. Leading whitespace (spaces and tabs) at the beginning of the logical line is used to determine the indentation level of the logical line, which in turn is used to determine the grouping of statements.
+Spasi sangat penting di Python. Sebetulnya, **spasi di awal baris sangat penting**. Ini dinamakan **indentasi**. Setiap baris logika yang diawali dengan spasi kosong (baik spasi maupun tabs) digunakan untuk menentukan level indentasi dari baris logika, dan pada akhirnya digunakan untuk menentukan kelompok statemen.
 
-This means that statements which go together **must** have the same indentation. Each such set of statements is called a **block**. We will see examples of how blocks are important in later chapters.
+Ini berarti bahwa statemen yang dijalankan secara bersamaan **harus** punya indentasi yang sama. Setiap set statemen/pernyataan dinamakan **blok*. Kita akan melihat contoh bagaimana pentingnya blok di bab berikutnya.
 
-One thing you should remember is that wrong indentation can give rise to errors. For example:
+Satu hal yang perlu Anda ingat adalah indentasi yang salah akan menimbulkan pesan kesalahan. Sebagai contoh:
 
 ~~~python
 i = 5
- print('Value is ', i) # Error! Notice a single space at the start of the line
-print('I repeat, the value is ', i)
+ print('Nilainya adalah ', i) # Salah! Perhatikan spasi tunggal di awal baris.
+print('Saya ulangi, nilainya adalah ', i)
 ~~~
 
-When you run this, you get the following error:
+Ketika Anda menjalankan ini, Anda akan mendapatkan pesan kesalahan:
 
 ~~~
   File "whitespace.py", line 4
-    print('Value is ', i) # Error! Notice a single space at the start of the line
+    print('Nilainya adalah ', i) # Salah! Perhatikan spasi tunggal di awal baris.
     ^
 IndentationError: unexpected indent
 ~~~
 
-Notice that there is a single space at the beginning of the second line. The error indicated by Python tells us that the syntax of the program is invalid i.e. the program was not properly written. What this means to you is that *you cannot arbitrarily start new blocks of statements* (except for the default main block which you have been using all along, of course). Cases where you can use new blocks will be detailed in later chapters such as the [Control Flow](#control-flow).
+Perhatikan ada satu spasi kosong di awal baris kedua. Pesan kesalahan ini diindikasikan oleh Python, dengan mengatakan bahwa sintaks programnya tidak valid atau dengan kata lain program tidak ditulis dengan benar. Ini berarti bahwa *Anda tidak dapat sembarangan memulai blok atau statemen* (kecuali untuk blok utama yang secara default digunakan terus, tentu saja). Dalam kasus Anda dapat menggunakan blok baru, akan dijelaskan secara lebih detail dalam bab berikutnya seperti dalam [Arus Kontrol](#control-flow)
 
-How to indent
+Bagaimana Melakukan Indentasi
 
-:   Use only spaces for indentation, with a tab stop of 4 spaces. Good editors like Komodo Edit will automatically do this for you. Make sure you use a consistent number of spaces for indentation, otherwise your program will show errors.
+:   Selalu gunakan spasi untuk indentasi, dengan pemberhentian tapnya 4 spasi. Editor yang baik seperti Komodo Edit akan secara otomatis melakukan hal ini untuk Anda. Pastikan Anda menggunakan jumlah spasi yang konsisten untuk identasi, atau program Anda akan menampilkan pesan kesalahan.
 
-Note to static language programmers
+Catataun untuk programmer bahasa statik
 
-:   Python will always use indentation for blocks and will never use braces. Run `from __future__ import braces` to learn more.
+:   Python akan selalu menggunakan indentasi untuk blok dan tidak pernah menggunakan kurung kurawal. Jalankan `from __future__ import braces` untuk mempelajari lebih jauh.
 
-## Summary
+## Rangkuman 
 
-Now that we have gone through many nitty-gritty details, we can move on to more interesting stuff such as control flow statements. Be sure to become comfortable with what you have read in this chapter.
+Sekarang kita telah melewati banyak pernik-pernik detill, dan kita dapat melanjutkan untuk hal-hal yang lebih menarik seperti statemen pengatur arus (control flow statements). Pastikan Anda sudah nyaman dengan apa yang Anda baca di bab ini.
