@@ -1,14 +1,14 @@
-# Operators and Expressions
+# Operator dan Ekspresi
 
-Most statements (logical lines) that you write will contain *expressions*. A simple example of an expression is `2 + 3`. An expression can be broken down into operators and operands.
+Hampir semua statemen (baris logis) yang Anda tulis akan mengandung *ekspresi*. Contoh sederhana dari ekspresi adalah `2+3`. Sebuah ekspresi dapat diturunkan menjadi operator dan operand. 
 
-*Operators* are functionality that do something and can be represented by symbols such as `+` or by special keywords. Operators require some data to operate on and such data is called *operands*. In this case, `2` and `3` are the operands.
+*Operator* adalah fungsi yang menjalankan sesuatu dan direpresentasikan oleh simbol, seperti `+` atau kata kunci khusus. Operator butuh data untuk dioperasikan dan data ini disebut *operand*. Dalam kasus ini `2` dan `3` adalah operand.
 
-## Operators
+## Operator
 
-We will briefly take a look at the operators and their usage:
+Kita akan melihat operator secara singkat dan bagaimana penggunaannya:
 
-Note that you can evaluate the expressions given in the examples using the interpreter interactively. For example, to test the expression `2 + 3`, use the interactive Python interpreter prompt:
+Catat bahwa Anda dapat mengevaluasi ekspresi yang diberikan di contoh ini dengan menggunakan interpreter secara interaktif. Sebagai contoh, untuk menguji ekspresi `2+3`, gunakan prompt interpreter interaktif Python:
 
 ~~~python
 >>> 2 + 3
@@ -18,154 +18,153 @@ Note that you can evaluate the expressions given in the examples using the inter
 >>>
 ~~~
 
-`+` (plus)
+`+` (tambah)
 
-:   Adds two objects
+:   Menambahkan dua obyek
 
-    `3 + 5` gives `8`. `'a' + 'b'` gives `'ab'`.
+    `3 + 5` menghasilkan `8`. `'a' + 'b'` menghasilkan `'ab'`.
 
 `-` (minus)
 
-:   Gives the subtraction of one number from the other; if the first operand is absent it is assumed to be zero.
+:   Mengurangi satu angka terhadap angka lainnyal jika operand pertama tidak ada, diasumsikan nol.
 
-    `-5.2` gives a negative number and `50 - 24` gives `26`.
+    `-5.2` memberikan angka negatif dan `50 - 24` memberi hasil `26`.
 
-`*` (multiply)
+`*` (perkalian)
 
-:   Gives the multiplication of the two numbers or returns the string repeated that many times.
+:   Menghasilkan perkalian dari dua angka atau mengembalikan string yang diulang beberapa kali.
 
-    `2 * 3` gives `6`. `'la' * 3` gives `'lalala'`.
+    `2 * 3` menghasilkan `6`. `'la' * 3` menghasilkan `'lalala'`.
 
-`**` (power)
+`**` (pangkat)
 
-:   Returns x to the power of y
+:   Menghasilkan x pangkat y
 
-    `3 ** 4` gives `81` (i.e. `3 * 3 * 3 * 3`)
+    `3 ** 4` memberikan `81` (dengan kata lain `3 * 3 * 3 * 3`)
 
-`/` (divide)
+`/` (pembagian)
 
-:   Divide x by y
+:   Membagi x oleh y
 
-    `4 / 3` gives `1.3333333333333333`.
+    `4 / 3` menghasilkan `1.3333333333333333`.
 
-`//` (floor division)
+`//` (pembagi bulat ke bawah)
 
-:   Returns the floor of the quotient
+:   Mengembalikan hasil pembulatan ke bawah dari hasil pembagian
 
-    `4 // 3` gives `1`.
+    `4 // 3` menghasilkan `1`.
 
 `%` (modulo)
 
-:   Returns the remainder of the division
+:   Menghasilkan sisa dari pembagian
 
-    `8 % 3` gives `2`. `-25.5 % 2.25` gives `1.5`.
+    `8 % 3` menghasilkan `2`. `-25.5 % 2.25` menghasilkan `1.5`.
 
-`<<` (left shift)
+`<<` (geser kiri)
 
-:   Shifts the bits of the number to the left by the number of bits specified. (Each number is represented in memory by bits or binary digits i.e. 0 and 1)
+:   Menggeser nomor bit ke sebelah kiri sesuai dengan jumlah bit yang telah ditentukan (setiap angka merupakan representasi bit di memori atau digit biner, yakni 0 dan 1)
 
-    `2 << 2` gives `8`. `2` is represented by `10` in bits.
+    `2 << 2` menghasilkan `8`. `2` direpresentasikan `10` dalam bits.
 
-    Left shifting by 2 bits gives `1000` which represents the decimal `8`.
+    Menggeser 2 bit kekiri akan menghasilkan `1000` yang merupakan representasi dari desimal `8`.
 
-`>>` (right shift)
+`>>` (geser kanan)
 
-:   Shifts the bits of the number to the right by the number of bits specified.
+:   Menggeser angka bit ke kanan sesuai dengan jumlah bit yang telah ditentukan.
 
-    `11 >> 1` gives `5`.
+    `11 >> 1` menghasilkan `5`.
 
-    `11` is represented in bits by `1011` which when right shifted by 1 bit
-    gives `101`which is the decimal `5`.
+    `11` direpresentasikan oleh bit dengan `1011` kemudian digeser ke kanan 1 bit menghasilkan `101` yang merupakan desimal angka `5`
 
-`&` (bit-wise AND)
+`&` (bitwise AND)
 
-:   Bit-wise AND of the numbers
+:   Operasi bit-wise AND dari angka (bitwise adalah operasi angka berbasis bit yakni dengan `0` dan `1`)
 
-    `5 & 3` gives `1`.
+    `5 & 3` menghasilkan `1`.
 
-`|` (bit-wise OR)
+`|` (bitwise OR)
 
-:   Bitwise OR of the numbers
+:   Operasi bitwise OR dari angka
 
-    `5 | 3` gives `7`
+    `5 | 3` menghasilkan `7`
 
-`^` (bit-wise XOR)
+`^` (bitwise XOR)
 
-:   Bitwise XOR of the numbers
+:   Operasi angka Bitwise XOR (OR ekslusif/exclusive or)
 
-    `5 ^ 3` gives `6`
+    `5 ^ 3` menghasilkan `6`
 
-`~` (bit-wise invert)
+`~` (bitwise invert)
 
-:   The bit-wise inversion of x is -(x+1)
+:   Membalikkan angka bitwise dari x atau -(x+1)
 
-    `~5` gives `-6`.
+    `~5` menghasilkan `-6`.
 
-`<` (less than)
+`<` (kurang dari)
 
-:   Returns whether x is less than y. All comparison operators return `True` or `False`. Note the capitalization of these names.
+:   Menghasilkan pengembalian apakah x kurang dari y. Semua operator perbandingan hanya menghasilkan `True` atau `False`. Catat huruf besar yang ada di awal kata tersebut.
 
-    `5 &lt; 3` gives `False` and `3 &lt; 5` gives `True`.
+    `5 &lt; 3` menghasilkan `False` dan `3 &lt; 5` menghasilkan `True`.
 
-    Comparisons can be chained arbitrarily: `3 &lt; 5 &lt; 7` gives `True`.
+    Perbandingan dapat dirangkai secara bebas: `3 &lt; 5 &lt; 7` menghasilkan `True`.
 
-`>` (greater than)
+`>` (lebih besar dari)
 
-:   Returns whether x is greater than y
+:   Menghasilkan pengembalian apakah x lebih besar daripada y
 
-    `5 &gt; 3` returns `True`. If both operands are numbers, they are first converted to a common type. Otherwise, it always returns `False`.
+    `5 &gt; 3` menghasilkan `True`. Jika operand berupa angka, keduanya akan dikonversikan dalam tipe yang sejenis. Selain itu, selalu mengembalikan nilai `False`
 
-`<=` (less than or equal to)
+`<=` (lebih kecil atau sama dengan)
 
-:   Returns whether x is less than or equal to y
+:   Menghasilkan pengembalian apakah x lebih kecil atau sama dengan y
 
-    `x = 3; y = 6; x &lt;= y` returns `True`.
+    `x = 3; y = 6; x &lt;= y` menghasilkan `True`.
 
-`>=` (greater than or equal to)
+`>=` (lebih besar atau sama dengan)
 
-:   Returns whether x is greater than or equal to y
+:   Menghasilkan pengembalian apakah x lebih besar atau sama dengan y
 
-    `x = 4; y = 3; x &gt;= 3` returns `True`.
+    `x = 4; y = 3; x &gt;= 3` menghasilkan `True`.
 
-`==` (equal to)
+`==` (sama dengan)
 
-:   Compares if the objects are equal
+:   Membandingkan apakah kedua obyek sama atau tidak
 
-    `x = 2; y = 2; x == y` returns `True`.
+    `x = 2; y = 2; x == y` menghasilkan `True`.
 
-    `x = 'str'; y = 'stR'; x == y` returns `False`.
+    `x = 'str'; y = 'stR'; x == y` menghasilkan `False`.
 
-    `x = 'str'; y = 'str'; x == y` returns `True`.
+    `x = 'str'; y = 'str'; x == y` menghasilkan `True`.
 
-`!=` (not equal to)
+`!=` (tidak sama dengan)
 
-:   Compares if the objects are not equal
+:   Membandingkan apakah kedua obyek berbeda atau tidak
 
-    `x = 2; y = 3; x != y` returns `True`.
+    `x = 2; y = 3; x != y` menghasilkan `True`.
 
 `not` (boolean NOT)
 
-:   If x is `True`, it returns `False`. If x is `False`, it returns `True`.
+:   Jika x `True`, akan  menghasilkan `False`. Jika x `False`, menghasilkan `True`.
 
-    `x = True; not x` returns `False`.
+    `x = True; not x` menghasilkan `False`.
 
 `and` (boolean AND)
 
-:   `x and y` returns `False` if x is `False`, else it returns evaluation of y
+:   `x dan y` menghasilkan `False` Jika x `False`, selain itu akan menghasilkan pengembalian evaluasi nilai y 
 
-    `x = False; y = True; x and y` returns `False` since x is False. In this case, Python will not evaluate y since it knows that the left hand side of the 'and' expression is `False` which implies that the whole expression will be `False` irrespective of the other values. This is called short-circuit evaluation.
+    `x = False; y = True; x and y` menghasilkan `False` mengingat x False. Dalam kasus ini, Python tidak akan mengevaluasi y mengingat nilai dari ekspresi `and` adalah `False` yang menunjukkan bahwa seluruh ekspresi akan bernilai `False` dengan mengabaikan nilai apapun yang ada setelahnya. Ini disebut evaluasi sirkuit-pendek. I
 
 `or` (boolean OR)
 
-:   If x is `True`, it returns True, else it returns evaluation of y
+:   Jika x `True`, akan mengembalikan `True`, selain itu akan mengembalikan nilai y 
 
-    `x = True; y = False; x or y` returns `True`. Short-circuit evaluation applies here as well.
+    `x = True; y = False; x or y` mengembalikan `True`. Evaluasi sirkuit pendek juga berlaku di sini.
 
-### Shortcut for math operation and assignment
+### Jalan pintas untuk operasi matematika dan penugasan
 
-It is common to run a math operation on a variable and then assign the result of the operation back to the variable, hence there is a shortcut for such expressions:
+Menjalankan operasi matematika di variable lalu menugaskan hasilnya kembali kepada variabel cukup umum dilakukan di Python. Berikut adalah jalan pintas untuk menjalankan ekspresi tersebut.
 
-You can write:
+Anda dapat menulis:
 
 ~~~python
 a = 2
@@ -173,26 +172,26 @@ a = a * 3
 ~~~
 
 
-as:
+dengan cara:
 
 ~~~python
 a = 2
 a *= 3
 ~~~
 
-Notice that `var = var operation expression` becomes `var operation= expression`.
+Perhatikan bahwa `operasi ekxpresi var = var` menjadi `var operasi = ekspresi`.
 
-## Evaluation Order
+## Urutan Evaluasi
 
-If you had an expression such as `2 + 3 * 4`, is the addition done first or the multiplication? Our high school maths tells us that the multiplication should be done first. This means that the multiplication operator has higher precedence than the addition operator.
+Jika Anda memiliki ekspresi seperti `2 + 3 * 4`, yang dilakukan penambahan dulu atau perkalian dulu? Dulu guru matematika di sekolah kita mengatakan bahwa perkalian harus dilakukan lebih dulu. Ini berarti operasi perkalian memiliki tingkat yang lebih tinggi daripada operasi penambahan.
 
-The following table gives the precedence table for Python, from the lowest precedence (least binding) to the highest precedence (most binding). This means that in a given expression, Python will first evaluate the operators and expressions lower in the table before the ones listed higher in the table.
+Tabel berikut memberikan urutan untuk Python, dari urutan paling rendah (ikatan terenda) ke urutan tertinggi (ikatan tertinggi). Ini berarti bahwa dalam setiap ekspresi yang diberikan, Python akan mengevaluasi operator dan ekspresi di tabel yang lebih rendah sebelum menjalankan operasi di tabel yang lebih tinggi.
 
-The following table, taken from the [Python reference manual](http://docs.python.org/py3k/reference/expressions.html#summary), is provided for the sake of completeness. It is far better to use parentheses to group operators and operands appropriately in order to explicitly specify the precedence. This makes the program more readable. See [Changing the Order of Evaluation](#changing-the-order-of-evaluation) below for details.
+Tabel berikut diambil dari [manual referensi Python](http://docs.python.org/py3k/reference/expressions.html#summary), diberikan hanya untuk kelengkapan saja. Lebih disarankan sebetulnya untuk menggunakan tanda kurung untuk mengelompokkan operasi dan operand secara benar, dan secara eksplit menentukan urutan. Ini membuat program dapat lebih dibaca. Lihat [Mengubah Urutan Evaluasi](#changing-the-order-of-evaluation) di bawah untuk lebih lengkapnya.
 
 `lambda`
 
-:   Lambda Expression
+:  Ekspresi lambda 
 
 `or`
 
@@ -208,15 +207,15 @@ The following table, taken from the [Python reference manual](http://docs.python
 
 `in, not in`
 
-:   Membership tests
+:   Tes keanggotaan variabel
 
 `is, is not`
 
-:   Identity tests
+:   Tes identitas variabel
 
 `<, <=, >, >=, !=, ==`
 
-:   Comparisons
+:   Perbandingan
 
 `|`
 
@@ -232,19 +231,19 @@ The following table, taken from the [Python reference manual](http://docs.python
 
 `<<, >>`
 
-:   Shifts
+:   Menggeser
 
 `+, -`
 
-:   Addition and subtraction
+:   Penambahan dan Pengurangan
 
 `*, /, //, %`
 
-:   Multiplication, Division, Floor Division and Remainder
+:   Perkalian, Pembagian, Pembagian pembulatan kebawah dan sisa (modulo)
 
 `+x, -x`
 
-:   Positive, Negative
+:   Positif, Negatif
 
 `~x`
 
@@ -252,77 +251,77 @@ The following table, taken from the [Python reference manual](http://docs.python
 
 `**`
 
-:   Exponentiation
+:   Eksponensial/Pangkat
 
 `x.attribute`
 
-:   Attribute reference
+:   Referensi terhadap artribut
 
 `x[index]`
 
-:   Subscription
+:   Pendaftaran
 
 `x[index1:index2]`
 
-:   Slicing
+:   Pemotongan
 
-`f(arguments ...)`
+`f(argumen ...)`
 
-:   Function call
+:   Pemanggilan fungsi
 
-`(expressions, ...)`
+`(ekspresi, ...)`
 
-:   Binding or tuple display
+:   Pengikatan atau penampilan dalam format tuple
 
-`[expressions, ...]`
+`[ekspresi, ...]`
 
-:   List display
+:  Penampilan dalam format list 
 
 `{key:datum, ...}`
 
-:   Dictionary display
+:   Penampilan dalam format kamus (dictionary)
 
 The operators which we have not already come across will be explained in later chapters.
 
 Operators with the *same precedence* are listed in the same row in the above table. For example, `+` and `-` have the same precedence.
 
-## Changing the Order Of Evaluation
+## Mengubah Urutan Ekspresi Evaluasi 
 
-To make the expressions more readable, we can use parentheses. For example, `2 + (3 * 4)` is definitely easier to understand than `2 + 3 * 4` which requires knowledge of the operator precedences. As with everything else, the parentheses should be used reasonably (do not overdo it) and should not be redundant, as in `(2 + (3 * 4))`.
+Untuk membuat ekspresi lebih mudah dibaca kita dapat menggunakan tanda dalam kurung. Sebagai contoh `2 + ( 3 * 4 ) jauh leibh mudah untuk dipahami daripada `2 + 3 * 4` yang membutuhkan pengetahuan urutan operator. Sebagaimana hal lainnya, tanda dalam kurung harus digunakan secara tepat (jangan berlebihan) dan jangan rendundan seperti di `(2 + (3 * 4)).
 
-There is an additional advantage to using parentheses - it helps us to change the order of evaluation. For example, if you want addition to be evaluated before multiplication in an expression, then you can write something like `(2 + 3) * 4`.
+Ada keuntungan lain menggunakan tanda kurung - membantu penggantian urutan evaluasi. Sebagai contoh jika Anda ingin penambahan diproses dulu sebelum perkalian dalam satu ekspresi, Anda dapat menuliskannya dengan `(2 +3) * 4`.
 
-## Associativity
+## Asosiatifitas 
 
-Operators are usually associated from left to right. This means that operators with the same precedence are evaluated in a left to right manner. For example, `2 + 3 + 4` is evaluated as `(2 + 3) + 4`. Some operators like assignment operators have right to left associativity i.e. `a = b = c` is treated as `a = (b = c)`.
+Operator biasanya diasosiasikan dari kiri kekanan. Ini berarti operator dengan urutan yang sama, akan dievaluasi secara urut dari kiri ke kanan. Sebagai contoh, `2 + 3 + 4` akan di evaluasi dengan `(2 + 3) + 4`. Beberapa operator seperti operator sama dengan (penugasan/assignment) memiliki asosiatifitas dari kanan ke kiri. Misalnya `a = b = c` diperlakukan `a = (b = c)`.
 
-## Expressions
+## Ekspresi 
 
-Example (save as `expression.py`):
+Contoh (simpan berkas berikut dengan nama `expression.py`):
 
 ~~~python
-length = 5
-breadth = 2
+panjang = 5
+lebar = 2
 
-area = length * breadth
-print('Area is', area)
-print('Perimeter is', 2 * (length + breadth))
+area = panjang * lebar
+print('Area seluas', area)
+print('Perimeter seluas', 2 * (panjang + lebar))
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 expression.py
-Area is 10
-Perimeter is 14
+Area seluas 10
+Perimeter seluas 14
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The length and breadth of the rectangle are stored in variables by the same name. We use these to calculate the area and perimeter of the rectangle with the help of expressions. We store the result of the expression `length * breadth` in the variable `area` and then print it using the `print` function. In the second case, we directly use the value of the expression `2 * (length + breadth)` in the print function.
+Panjang dan lebar dari sebuah persegi empat disimpan dalam variabel dengan nama sama. Kita gunakan ini untuk menghitung area dan perimeter persegi empat di mana variabelnya disimpan dengan nama yang sama. Kita simpan hasil dari ekspresi `panjang * lebar` ke dalam variabel bernama `area`, lalu mencetaknya di layar dengan perintah `print`. Dalam kasus kedua, kita secara langsung menggunakan nilai dari eksresi `2 * (panjang + lebar)` dalam fungsi print. 
 
-Also, notice how Python 'pretty-prints' the output. Even though we have not specified a space between `'Area is'` and the variable `area`, Python puts it for us so that we get a clean nice output and the program is much more readable this way (since we don't need to worry about spacing in the strings we use for output). This is an example of how Python makes life easy for the programmer.
+Juga perhatikan bagaimana Python 'mencetak-cantik' keluarannya. Meskipun kita tidak menentikan spasi antara `'Area seluas'` dengan variabel `area`, Python menampakkanyya dalam keluaran yang manis dan bersih sehingga program dapat jauh leibh mudah dibaca dengan cara ini (mengingat kita tidak perlu khawatir tentang spasi dan string untuk menggunakan keluaran). Ini adalah salah satu contoh bagaimana Python membuat hidup programmer menjadi lebih mudah.
 
-## Summary
+## Ringkasan 
 
-We have seen how to use operators, operands and expressions - these are the basic building blocks of any program. Next, we will see how to make use of these in our programs using statements.
+Kita telah melihat bagaimana menggunakan operator, operan dan ekspresi - ini adalah kerangka dasar dari sebuah program. Berikutnya kita akan melihat bagaimana cara menggunakan hal ini ke dalam program lewat statemen.
