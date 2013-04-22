@@ -18,10 +18,10 @@ if tebakan == angka:
     print('Selamat Anda telah menebaknya') # Blok baru mulai di sini
     print('(Tapi tidak ada satu hadiahpun untuk Anda!)') # Blok baru berakhir di sini
 elif tebakan < angka:
-    print('Tidak, angkanya sedikit lebih besar lagi daripada itu') # Blok lainnya 
+    print('Tidak, angkanya sedikit lebih besar lagi') # Blok lainnya 
     # Anda dapat melakukan apapun di blok ini ...
 else:
-    print('Tidak, angkanya lebih kecil lagi daripada itu')
+    print('Tidak, angkanya lebih kecil lagi')
     # you must have guessed > number to reach here
 
 print('Selesai')
@@ -33,12 +33,12 @@ Keluaran:
 ~~~
 $ python3 if.py
 Masukkan sebuah angka : 50
-Tidak, angkanya lebih kecil lagi daripada itu
+Tidak, angkanya lebih kecil lagi 
 Selesai
 
 $ python3 if.py
 Masukkan sebuah angka : 22 
-Tidak, angkanya sedikit lebih besar lagi daripada itu
+Tidak, angkanya sedikit lebih besar lagi 
 Selesai
 
 $ python3 if.py
@@ -87,14 +87,13 @@ Contoh (simpan dengan nama`while.py`):
 
 ~~~python
 angka = 23
-lari = True
+jalankan = True
 
 while lari:
     tebak = int(input('Masukkan sebuah angka: '))
-
     if tebak == angka:
         print('Selamat, Anda telah menebaknya.')
-        lari = False # ini akan menyebabkan loop while-nya berhenti
+        jalankan = False # ini akan menyebabkan loop while-nya berhenti
     elif tebak < angka:
         print('Tidak, sedikit lebih besar dari itu.')
     else:
@@ -110,21 +109,21 @@ Output:
 
 ~~~
 $ python3 while.py
-Enter an integer : 50
-No, it is a little lower than that.
-Enter an integer : 22
-No, it is a little higher than that.
-Enter an integer : 23
-Congratulations, you guessed it.
-The while loop is over.
-Done
+Masukkan sebuah angka: 50
+Tidak, sedikit lebih kecil dari itu.
+Masukkan sebuah angka: 22
+Tidak, sedikit lebih besar dari itu.
+Masukkan sebuah angka: 23
+Selamat, Anda telah menebaknya.
+Loop while-nya telah selesai.
+Selesai
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-In this program, we are still playing the guessing game, but the advantage is that the user is allowed to keep guessing until he guesses correctly - there is no need to repeatedly run the program for each guess, as we have done in the previous section. This aptly demonstrates the use of the `while` statement.
+Dalam program ini, kita masih bermain dengan program tebakan, tapi dibanding yang sebelumnya, dalam program ini pengguna dapat terus menebak hingga dia menebak secara benar - pengulangan program pada setiap tebakan tidak dibutuhkan, sebagaimana yang sudah kita kerjakan pada bagian sebelumnya. Ini secara jelas mendemonstrasikan bagaimana statemen `while` bekerja.
 
-We move the `input` and `if` statements to inside the `while` loop and set the variable `running` to `True` before the while loop. First, we check if the variable `running` is `True` and then proceed to execute the corresponding *while-block*. After this block is executed, the condition is again checked which in this case is the `running` variable. If it is true, we execute the while-block again, else we continue to execute the optional else-block and then continue to the next statement.
+Kita pindahkan statemen `input` dan `if` ke dalam putaran `while` dan kita tentukan variabel bernama `jalankan` dengan nilai `True` sebelum putaran `while` di mulai. Pertama jalan, kita cek dulu apakah vaiabel `jalankan` bernilai `True` lalu lanjut mengeksekusi *while-block* terkait. Setelah blok ini dieksekusi, program akan mengecek kembali apakah nilai variabel `jalankan`. Jika nilainya masih `True`, maka while-block akan dieksekusi kembali, begitu seterusnya.
 
 The `else` block is executed when the `while` loop condition becomes `False` - this may even be the first time that the condition is checked. If there is an `else` clause for a `while` loop, it is always executed unless you break out of the loop with a `break` statement.
 
