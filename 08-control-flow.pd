@@ -1,109 +1,109 @@
-# Control Flow
+# Alur Kontrol 
 
-In the programs we have seen till now, there has always been a series of statements faithfully executed by Python in exact top-down order. What if you wanted to change the flow of how it works? For example, you want the program to take some decisions and do different things depending on different situations, such as printing 'Good Morning' or 'Good Evening' depending on the time of the day?
+Di dalam program yang kita lihat hingga saat ini, selalu saja ada beberapa urutan statemen yang dijalankan secara saklak oleh Python, berurutan dari atas ke bawah. Bagaimana jika Anda ingin mengubah bagaimana alur kerjanya? Sebagai contoh Anda ingin program untuk mengambil keputusan dan bertindak secara berbeda tergantung keputusan yang diambil. Sebagai contoh, misalnya mencetak 'Selamat Pagi' atau 'Selamat Sore' tergantung waktu yang ada saat itu?
 
-As you might have guessed, this is achieved using control flow statements. There are three control flow statements in Python - `if`, `for` and `while`.
+Sebagaimana yang Anda sudah bisa tebak, ini dapat dilakukan lewat statemen alur kontrol. Ada tiga macam statemen alur kontrol di Python - `if`, `for` dan `while`.
 
-## The if statement
+## Statemen if
 
-The `if` statement is used to check a condition: *if* the condition is true, we run a block of statements (called the *if-block*), *else* we process another block of statements (called the *else-block*). The *else* clause is optional.
+Statemen `if` digunakan untuk mengecek kondisi: jika kondisi *if* bernilai benar, maka kita akan menjalankan satu blok statemen (disebut *if-block*), selain itu diteruskan dengan statemen  *else* kita gunakan untuk memproses blok statemen yang lain (dinamakan *else-block*). Klausul *else* tersebut sifatnya tidak wajib.
 
-Example (save as `if.py`):
+Contoh (simpan dengan nama `if.py`):
 
 ~~~python
-number = 23
-guess = int(input('Enter an integer : '))
+angka = 23
+tebakan = int(input('Masukkan sebuah angka : '))
 
-if guess == number:
-    print('Congratulations, you guessed it.') # New block starts here
-    print('(but you do not win any prizes!)') # New block ends here
-elif guess < number:
-    print('No, it is a little higher than that') # Another block
-    # You can do whatever you want in a block ...
+if tebakan == angka:
+    print('Selamat Anda telah menebaknya') # Blok baru mulai di sini
+    print('(Tapi tidak ada satu hadiahpun untuk Anda!)') # Blok baru berakhir di sini
+elif tebakan < angka:
+    print('Tidak, angkanya sedikit lebih besar lagi daripada itu') # Blok lainnya 
+    # Anda dapat melakukan apapun di blok ini ...
 else:
-    print('No, it is a little lower than that')
+    print('Tidak, angkanya lebih kecil lagi daripada itu')
     # you must have guessed > number to reach here
 
-print('Done')
-# This last statement is always executed, after the if statement is executed
+print('Selesai')
+# Statemen terakhir ini selalu dieksekusi, setelah statemen if tersebut dijalankan.
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 if.py
-Enter an integer : 50
-No, it is a little lower than that
-Done
+Masukkan sebuah angka : 50
+Tidak, angkanya lebih kecil lagi daripada itu
+Selesai
 
 $ python3 if.py
-Enter an integer : 22
-No, it is a little higher than that
-Done
+Masukkan sebuah angka : 22 
+Tidak, angkanya sedikit lebih besar lagi daripada itu
+Selesai
 
 $ python3 if.py
-Enter an integer : 23
-Congratulations, you guessed it.
-(but you do not win any prizes!)
-Done
+Masukkan sebuah angka : 23
+Selamat, Anda telah menbaknya
+(Tapi tidak ada satu hadiahpun untuk Anda!)
+Selesai
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-In this program, we take guesses from the user and check if it is the number that we have. We set the variable `number` to any integer we want, say `23`. Then, we take the user's guess using the `input()` function. Functions are just reusable pieces of programs. We'll read more about them in the [next chapter](#functions).
+Dalam program ini, kita menebak dari pengguna dan mengeceknya dengan nomor yang kita punya. Di awal, kita sudah mengeset variabel `angka` ke dalam nilai integer yang kita inginkan, misalnya `23`. Lalu, kita gunakan tebakan dari pengguna lewat fungsi `input()`. Fungsi adalah bagian dari program yang dapat digunakan kembali. Kita akan membaca tentang hal ini di [bab berikutnya](#functions).
 
-We supply a string to the built-in `input` function which prints it to the screen and waits for input from the user. Once we enter something and press `enter` key, the `input()` function returns what we entered, as a string. We then convert this string to an integer using `int` and then store it in the variable `guess`. Actually, the `int` is a class but all you need to know right now is that you can use it to convert a string to an integer (assuming the string contains a valid integer in the text).
+Kita memasukkan sebuah string ke dalam fungsi built-in bernama `input` yang akan mencetak di layar sesuai dengan masukan yang diketikkan oleh pengguna di layar. Sekali dimasukkan, dan pengguna menekan tombol `enter`, maka fungsi `input()` akan mengembalikan apapun yang dimasukkan oleh pengguna, sebagai sebuah string. Lalu kita mengkonversi string ini ke dalam integer dengan menggunakan `int` lalu menyimpannya ke dalam variabel bernama `tebakan`. Sebetulnya, `int` merupakan class, tapi yang Anda perlu tahu saat ini adalah Anda dapat menggunakannya untuk mengonversi sebuah string ke dalam integer (asumsikan string tersebut berisi integer yang valid di dalamnya).
 
-Next, we compare the guess of the user with the number we have chosen. If they are equal, we print a success message. Notice that we use indentation levels to tell Python which statements belong to which block. This is why indentation is so important in Python. I hope you are sticking to the "consistent indentation" rule. Are you?
+Berikutnya, kita bandingkan tebakan dari pengguna dengan nomor yang telah kita tentukan sebelumnya. Jika mereka bernilai sama, kita tampilkan pesan berhasil. Perhatikan bahwa kita menggunakan level indentasi untuk memberitahu Python, statemen mana ikut ke dalam blok mana. Inilah mengapa indentasi sangat penting di Python. Saya harap Anda menggunakan aturan "indentasi yang konsisten". Betul kan?
 
-Notice how the `if` statement contains a colon at the end - we are indicating to Python that a block of statements follows.
+Perhatikan bahwa jika statemen `if` berisi titik koma di akhir kalimat 0 kita mengindikasikan kepada Python bahwa blok statemen tersebut akan mengikuti.
 
-Then, we check if the guess is less than the number, and if so, we inform the user that they must guess a little higher than that. What we have used here is the `elif` clause which actually combines two related `if else-if else` statements into one combined `if-elif-else` statement. This makes the program easier and reduces the amount of indentation required.
+Lalu kita cek lagi, apakah tebakan tersebut lebih kecil atau lebih besar dari angka yang kita tentukan, dan jika memang demikian kasusnya, kita informasikan kepada pengguna bahwa mereka harus menebak angka yang lebih tinggi daripada itu. Apa yang kita gunakan di sini adalah klausul `elif` yang sebenarnya bertugas untuk membandingkan dua statemen `if else-if else` yang berhubungan satu sama lain. Ini akan membuat program lebih mudah, dan mengurangi jumlah indentasi yang dibutuhkan.
 
-The `elif` and `else` statements must also have a colon at the end of the logical line followed by their corresponding block of statements (with proper indentation, of course)
+Statemen `elif` dan `else` juga harus punya titik koma di akhir baris logis diikuti oleh blok statemen terkait (dengan indentasi yang benar tentu saja)
 
-You can have another `if` statement inside the if-block of an `if` statement and so on - this is called a nested `if` statement.
+Anda dapat menambahkan statemen `if` yang lain di dalam blok statemen `if` dan seterusnya - ini dinamakan statemen `if` tergabung (nested).
 
-Remember that the `elif` and `else` parts are optional. A minimal valid `if` statement is:
+Ingat bahwa bagian `elif` dan `else` sifatnya tidak wajib. Statemen `if` yang valid, minimal:
 
 ~~~python
 if True:
-    print('Yes, it is true')
+    print('Yak, itu benar')
 ~~~
 
-After Python has finished executing the complete `if` statement along with the associated `elif` and `else` clauses, it moves on to the next statement in the block containing the `if` statement. In this case, it is the main block (where execution of the program starts), and the next statement is the `print('Done')` statement. After this, Python sees the ends of the program and simply finishes up.
+Setelah Python menyelesaikan eksekusi dan melengkapi statemen `if` termasuk klausul `elif` dan `else` terkait, maka statemen berikutnya adalah `print('Selesai')`. Setelah ini, Python akan melihat bahwa program sudah selesai dan berhenti.
 
-Even though this is a very simple program, I have been pointing out a lot of things that you should notice. All these are pretty straightforward (and surprisingly simple for those of you from C/C++ backgrounds). You will need to become aware of all these things initially, but after some practice you will become comfortable with them, and it will all feel 'natural' to you.
+Meskipun program ini sangat sederhana, Saya telah menunjukkan banyak hal yang harus Anda perhatikan. Semua ini sangat langsung (dan sangat mudah jika Anda memiliki latar belakang C/C++). Anda hanya perlu menyadari ini di depan, dan setelah praktek beberapa kali Anda akan merasa nyaman dengan itu, sehingga terasa 'natural' untuk Anda.
 
-Note for C/C++ Programmers
+Catatan untuk programer C/C++
 
-:   There is no `switch` statement in Python. You can use an `if..elif..else` statement to do the same thing (and in some cases, use a [dictionary](#dictionary) to do it quickly)
+:   Tidak ada statemen `switch` di Python. Anda dapat menggunakan `if..elif..else` untuk melakukan hal yang sama (dalam beberapa kasus dapat menggunakan [dictionary](#dictionary) untuk mengerjakannya dengan cepat)
 
-## The while Statement 
+## Statemen While 
 
-The `while` statement allows you to repeatedly execute a block of statements as long as a condition is true. A `while` statement is an example of what is called a *looping* statement. A `while` statement can have an optional `else` clause.
+Statemen `while` memungkinkan Anda untuk mengeksekusi blok statemen berkali kali sepanjang kondisinya true. Statemen `while` adalah sebuah contoh terhadap apa yang dinamakan statemen *looping*. Statemen `while` dapat memiliki klausul opsional `else`.
 
-Example (save as `while.py`):
+Contoh (simpan dengan nama`while.py`):
 
 ~~~python
-number = 23
-running = True
+angka = 23
+lari = True
 
-while running:
-    guess = int(input('Enter an integer : '))
+while lari:
+    tebak = int(input('Masukkan sebuah angka: '))
 
-    if guess == number:
-        print('Congratulations, you guessed it.')
-        running = False # this causes the while loop to stop
-    elif guess < number:
-        print('No, it is a little higher than that.')
+    if tebak == angka:
+        print('Selamat, Anda telah menebaknya.')
+        lari = False # ini akan menyebabkan loop while-nya berhenti
+    elif tebak < angka:
+        print('Tidak, sedikit lebih besar dari itu.')
     else:
-        print('No, it is a little lower than that.')
+        print('Tidak, sedikit lebih kecil dari itu.')
 else:
-    print('The while loop is over.')
-    # Do anything else you want to do here
+    print('Loop while-nya telah selesai.')
+    # Kerjakan hal lain yang Anda inginkan di sini.
 
-print('Done')
+print('Selesai')
 ~~~
 
 Output:
