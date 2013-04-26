@@ -125,28 +125,28 @@ Dalam program ini, kita masih bermain dengan program tebakan, tapi dibanding yan
 
 Kita pindahkan statemen `input` dan `if` ke dalam putaran `while` dan kita tentukan variabel bernama `jalankan` dengan nilai `True` sebelum putaran `while` di mulai. Pertama jalan, kita cek dulu apakah vaiabel `jalankan` bernilai `True` lalu lanjut mengeksekusi *while-block* terkait. Setelah blok ini dieksekusi, program akan mengecek kembali apakah nilai variabel `jalankan`. Jika nilainya masih `True`, maka while-block akan dieksekusi kembali, begitu seterusnya.
 
-The `else` block is executed when the `while` loop condition becomes `False` - this may even be the first time that the condition is checked. If there is an `else` clause for a `while` loop, it is always executed unless you break out of the loop with a `break` statement.
+Blok `else` akan dieksekusi ketika kondisi putaran `while` menemukan nilai `False` - bahkan ini bisa juga terjadi pada putaran pertama. Jika ada klausul `else` dalam putaran `while`, klausul tersebut akan selalu dieksekusi kecuali Anda menghentikannya dengan statemen `break`.
 
-The `True` and `False` are called Boolean types and you can consider them to be equivalent to the value `1` and `0`respectively.
+Nilai `True` dan `False` dianggap sebagai tipe Boolean, dan Anda dapat menganggapnya memiliki nilai `1` untuk `True` dan `0` untuk `False`.
 
-Note for C/C++ Programmers
+Catatan untuk Programmer C/C++ 
 
-:   Remember that you can have an `else` clause for the `while` loop.
+:   Selalu ingat bahwa Anda dapat menyisipkan klausul `else` dalam putaran `while`
 
-## The for loop 
+## Putaran For 
 
-The `for..in` statement is another looping statement which *iterates* over a sequence of objects i.e. go through each item in a sequence. We will see more about [sequences](#sequence) in detail in later chapters. What you need to know right now is that a sequence is just an ordered collection of items.
+Ada lagi statemen putaran yang *mengulang* urutan obyek seperti menjalankan tiap item dalam urutan (sequence). Statemen ini disebut `for..in`. Kita akan lihat tentang [urutan](#sequence) di bab berikutnya secara detail. Apa yang pelru Anda ketahui sekarang bahwa urutan/sequence hanyalah kumpulan item berurut.
 
-Example (save as `for.py`):
+Contoh (simpan dengan nama `for.py`):
 
 ~~~python
 for i in range(1, 5):
     print(i)
 else:
-    print('The for loop is over')
+    print('Putaran telah selesai')
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 for.py
@@ -154,120 +154,120 @@ $ python3 for.py
 2
 3
 4
-The for loop is over
+Putaran telah selesai
 ~~~
 
-How It Works:
+Bagamaimana Cara Kerjanya:
 
-In this program, we are printing a *sequence* of numbers. We generate this sequence of numbers using the built-in `range` function.
+Dalam program ini, kita akn menampilkan *urutan* angka. Kita akan menghasilkan urutan angka ini dalam fungsi built-in dengan nama `range`.
 
-What we do here is supply it two numbers and `range` returns a sequence of numbers starting from the first number and up to the second number. For example, `range(1,5)` gives the sequence `[1, 2, 3, 4]`. By default, `range` takes a step count of 1. If we supply a third number to `range`, then that becomes the step count. For example, `range(1,5,2)` gives `[1,3]`. Remember that the range extends *up to* the second number i.e. it does **not** include the second number.
+Apa yang akan kita lakukan di sini adalah memberikan dua angka dan `range` akan mengembalikan urutan mulai dari angka yang paling kecil hingga angka yang paling besar. Sebagai contoh, `range(1,5)` akan memberikan urutan `[1, 2, 3, 4]`. Secara baku, `range` memulai langkah dalam hitungan 1. Jika kita memberikan angka ketiga ke dalam `range`, maka angka tersebut akan menjadi hitungan langkah. Contohnya, `range(1,5,2)` akan memberikan urutan `[1,3]`. Ingat bahwa range hanya memperluas *hingga* angka kedua, dengan kata lain **tidak** memasukkan angka kedua. 
 
-Note that range() generates a sequence of numbers, but it will generate only one number at a time, when the for loop requests for the next item. If you want to see the full sequence of numbers immediately, use list(range()). Lists are explained in the [[data structures chapter](#data-structures)].
+Sebagai catatan, range() menghasilkan urutan angka, tapi hanya satu angka dalam satu waktu, ketika menjalankan permintaan for loop dalam item berikutnya. Jika Anda ingin melihat urutan angka secara penuh dengan cepat, gunakan list(range()). Lists dijelaskan di [[bab tentang struktur data](#data-structures)].
 
-The `for` loop then iterates over this range - `for i in range(1,5)` is equivalent to `for i in [1, 2, 3, 4]` which is like assigning each number (or object) in the sequence to i, one at a time, and then executing the block of statements for each value of `i`.  In this case, we just print the value in the block of statements.
+`for` loop akan melakukan iterasi dalam range ini - `for i in range(1,5)` adalah sama dengan `for i in [1, 2, 3, 4]` yang akan menugaskan setiap angka (atau obyek) di dalam urutan ke dalam variabel i, sekali dalam satu waktu, dan mengeksekusi statemn blok dari tiap nilai `i`. Dalam kasus ini kita akan mencetak statemen blok.
 
-Remember that the `else` part is optional. When included, it is always executed once after the `for` loop is over unless a [break][#break) statement is encountered.
+Ingat bahwa bagian `else` sifatnya tidak wajib. Jika dimasukkan, bagian tersebut hanya akan dijalankan setelah putaran `for` selesai, kecuali ketemu statemen [break](#break).
 
-Remember that the `for..in` loop works for any sequence. Here, we have a list of numbers generated by the built-in `range` function, but in general we can use any kind of sequence of any kind of objects! We will explore this idea in detail in later chapters.
+Ingat bahwa putaran `for..in` bisa berjalan di urutan appaun. Di sini, kita memiliki daftar angka yang dihasilkan oleh fungsi `range` secara built-in, namun secara umum kita dapat menggunakan segala macam urutan dari berbagai jenis obyek! Kita akan mengeksplorasi ide ini secara detail di bab berikutnya.
 
-Note for C/C++/Java/C# Programmers
+Catatan untuk Programmer /C++/Java/C#
 
-:   The Python `for` loop is radically different from the C/C++ `for` loop. C# programmers will note that the `for` loop in Python is similar to the `foreach` loop in C#. Java programmers will note that the same is similar to `for (int i : IntArray)` in Java 1.5 .
+:   Putaran `for` di Python secara radikal berbeda dengan putaran `for` di C/C++. Programmer C# akan mencatat bahwa putaran `for` di dalam Python mirip dengan putaran `foreach` di C#. Sedangkan programmer Java bisa mencatat bahwa hal ini sama dengan `for (int i : IntArray)` di JAva 1.5.
 
-    In C/C++, if you want to write `for (int i = 0; i &lt; 5; i++)`, then in Python you write just `for i in range(0,5)`. As you can see, the `for` loop is simpler, more expressive and less error prone in Python.
+    Di C/C++, jika Anda ingin menulis `for (int i = 0; i &lt; 5; i++)`, maka di Python cukup tuliskan `for i in range(0,5)`. Sebagaimana yang Anda lihat, putaran `for` di Python lebih sederhana, lebih ekspresif dan lebih kecil kemungkinan salahnya. 
 
-## The break Statement
+## Statemen break
 
-The `break` statement is used to *break* out of a loop statement i.e. stop the execution of a looping statement, even if the loop condition has not become `False` or the sequence of items has not been completely iterated over.
+Statemen `break` digunakan untuk *menghentikan* statemen dalam sebuah loop (putaran), dengan kata lain akan menghentikan eksekusi dari statemen yang berputar, meskipun kondisinya tidak bernilai `False` atau item urutannya belum dijalankan secara keseluruhan.
 
-An important note is that if you *break* out of a `for`or `while` loop, any corresponding loop `else` block is **not** executed.
+Sebagai catatan yang cukup penting, jika Anda *menghentikan* putaran `for` atau `while`, setiap blok `else` yang terkait **tidak akan** dieksekusi.
 
-Example (save as `break.py`):
+Contoh (simpan dengan nama `break.py`):
 
 ~~~python
 while True:
-    s = input('Enter something : ')
-    if s == 'quit':
+    s = input('Masukkan sesuatu: ')
+    if s == 'berhenti':
         break
-    print('Length of the string is', len(s))
-print('Done')
+    print('Panjang hurufnya adalah ', len(s))
+print('Selesai')
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 break.py
-Enter something : Programming is fun
-Length of the string is 18
-Enter something : When the work is done
-Length of the string is 21
-Enter something : if you wanna make your work also fun:
-Length of the string is 37
-Enter something :       use Python!
-Length of the string is 12
-Enter something : quit
-Done
+Masukkan sesuatu:  Programming sangat menyenangkan
+Panjang hurufnya adalah  31
+Masukkan sesuatu:  Saat pekerjaan selesai
+Panjang hurufnya adalah  22
+Masukkan sesuatu:  jika Anda ingin pekerjaan Anda menyenangkan:
+Panjang hurufnya adalah  44
+Masukkan sesuatu:  gunakan Python!
+Panjang hurufnya adalah  15
+Masukkan sesuatu:  berhenti
+Selesai
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-In this program, we repeatedly take the user's input and print the length of each input each time. We are providing a special condition to stop the program by checking if the user input is `'quit'`. We stop the program by *breaking* out of the loop and reach the end of the program.
+Dalam program ini, kita berulangkali minta masukan dari pengguna, dan menampilkan jumlah panjang seluruh input yang dimasukkan. Kita memberikan kondisi khusus untuk menghentikan program dengan mengecek apakah masukan dari pengguna adalah `'berhenti'`. Kita menghentikan program dengan *berhenti* dari putaran (loop) dan menuju akhir dari program.
 
-The length of the input string can be found out using the built-in `len` function.
+Panjang dari string yang dimasukkan dapat dicari dengan menggunakan fungsi built-in bernama `len`
 
-Remember that the `break` statement can be used with the `for` loop as well.
+Ingat bahwa statemen `break` dapat digunakan dalam putaran `for` juga. 
 
-### Swaroop's Poetic Python
+### Puisi Python dari Swaroop
 
-The input I have used here is a mini poem I have written called *Swaroop's Poetic Python*:
+Input yang saya gunakan di sini adalah puisi mini yang saya tulis dengan nama *Puisi Python Swaroop*:
 
 ~~~
-Programming is fun
-When the work is done
-if you wanna make your work also fun:
-    use Python!
+Programming sangat menyenangkan
+Saat pekerjaan selesai
+jika Anda ingin pekerjaan Anda menyenangkan:
+    gunakan Python!
 ~~~
 
-## The continue Statement 
+## Statemen Continue (Lanjutkan)
 
-The `continue` statement is used to tell Python to skip the rest of the statements in the current loop block and to *continue* to the next iteration of the loop.
+Statemen `continue` digunakan untuk memberitahu Python agar mengabaikan statemn yang tersisa dari blok putaran yang ada saat ini, dan *melanjutkan* blok putaran berikutnya.
 
-Example (save as `continue.py`):
+Contoh (simpan dengan nama `continue.py`):
 
 ~~~python
 while True:
-    s = input('Enter something : ')
-    if s == 'quit':
+    s = input('Masukkan sesuatu: ')
+    if s == 'berhenti':
         break
     if len(s) < 3:
-        print('Too small')
+        print('Terlalu kecil')
         continue
-    print('Input is of sufficient length')
-    # Do other kinds of processing here...
+    print('Nilai yang Anda masukkan memiliki panjang yang cukup')
+    # Lakukan pemrosesan lainnya di sini...
 ~~~
 
 Output:
 
 ~~~
 $ python3 continue.py
-Enter something : a
-Too small
-Enter something : 12
-Too small
-Enter something : abc
-Input is of sufficient length
-Enter something : quit
+Masukkan sesuatu:  a
+Terlalu kecil
+Masukkan sesuatu:  12
+Terlalu kecil
+Masukkan sesuatu:  abc
+Nilai yang Anda masukkan memiliki panjang yang cukup
+Masukkan sesuatu:  quit
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-In this program, we accept input from the user, but we process the input string only if it is at least 3 characters long. So, we use the built-in `len` function to get the length and if the length is less than 3, we skip the rest of the statements in the block by using the `continue` statement. Otherwise, the rest of the statements in the loop are executed, doing any kind of processing we want to do here.
+Dalam program ini, kita menerima masukan dari pengguna, tapi kita hanya memproses masukan tersebut jika panjangnya lebih besar daripada 3. Jadi, kita menggunakan fungsi built-in `len` untuk memperoleh panjang masukan, dan jika panjangnya kurang dari 3, kita mengabaikan statemen berikutnya di blok yang sama dengan statemen `continue`. Dan selanjutnya, statemen yang tersisa dalam putaran tersebut akan dieksekusi, apapun pemrosesan yang kita inginkan di sini.
 
-Note that the `continue` statement works with the `for`loop as well.
+Catat bahwa statemen `continue` juga bisa jalan untuk putaran `for`.
 
-## Summary 
+## Ringkasan
 
-We have seen how to use the three control flow statements - `if`, `while` and `for` along with their associated `break` and `continue` statements. These are some of the most commonly used parts of Python and hence, becoming comfortable with them is essential.
+Kita telah melihat bagaimana menggunakan tiga statemen alur kontrol - `if`, `while` dan `for` lengkap dengan statemen terkait yakni `break` dan `continue`. Ini merupakan bagian yang paling sering digunakan di Python, sehingga membuat kita terbiasa dengan statemen tersebut sangatlah penting dan mendasar.
 
-Next, we will see how to create and use functions.
+Berikutnya, kita akan melihat bagaimana membuat dan menggunakan fungsi.
