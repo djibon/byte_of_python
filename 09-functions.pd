@@ -1,117 +1,117 @@
-# Functions
+# Fungsi
 
-Functions are reusable pieces of programs. They allow you to give a name to a block of statements, allowing you to run that block using the specified name anywhere in your program and any number of times. This is known as *calling* the function. We have already used many built-in functions such as `len` and `range`.
+Fungsi merupakan bagian yang dapat digunakan kembali di dalam program. Fungsi tersebut memungkinkan Anda memberi nama terhadap blok statemen, yang memungkinkan Anda menjalankan blok tersebut di program Anda kapan saja berkali-kali dengan memanggil namanya.  Ini dinamakan *pemanggilan* terhadap fungsi. Kita sudah pernah menggunakan beberapa fungsi yang sudah built-in seperti `len` dan `range`.
 
-The function concept is probably *the* most important building block of any non-trivial software (in any programming language), so we will explore various aspects of functions in this chapter.
+Konsep tentang fungsi ini mungkin merupakan *struktur pembangun* yang paling penting perangkat lunak (dalam bahasa pemrograman apapun), dan kita akan mengeksplorasi bermacam aspek dari fungsi dalam bab ini.
 
-Functions are defined using the `def` keyword. After this keyword comes an *identifier* name for the function, followed by a pair of parentheses which may enclose some names of variables, and by the final colon that ends the line. Next follows the block of statements that are part of this function. An example will show that this is actually very simple:
+Fungsi ditentukan dengan menggunakan kata kunci `def`. Setelah kata kunci, diikuti dengan nama *penanda* dari fungsi tersebut, diikut pasangan dalam kurung yang di dalamnya ada nama variabel. Setelah tanda kurung, akan ditutup dengan titik dua di akhir baris. Kemudian di baris baru akan diikuti blok statemen yang merupakan bagian dari fungsi tersebut. Contoh yang menunjukkan betapa sederhananya sebuah fungsi:
 
-Example (save as `function1.py`):
+Contoh (simpan dengan nama `function1.py`):
 
 ~~~python
-def sayHello():
-    print('Hello World!') # block belonging to the function
-# End of function
+def apaKabar():
+    print('Apa kabar dunia!') # blok ini milik fungsi sayHello()
+# Akhir fungsi
 
-sayHello() # call the function
-sayHello() # call the function again
+apaKabar() # memanggil fungsi
+apaKabar() # memanggil kembali fungsi
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 function1.py
-Hello World!
-Hello World!
+Apa kabar dunia!
+Apa kabar dunia!
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-We define a function called `sayHello` using the syntax as explained above. This function takes no parameters and hence there are no variables declared in the parentheses. Parameters to functions are just input to the function so that we can pass in different values to it and get back corresponding results.
+Kita mendefinisikan fungsi yang bernama `apaKabar` dengan menggunakan sintaks sebagaimana yang telah dijelaskan di atas. Fungsi ini tidak mengambil satu parameterpun, sehingga tidak perlu ada variabel yang dideklarasikan di dalam kurung. Parameter ke dalam fungsi hanyalah merupakan masukan yang digunakan di dalam fungsi, sehingga kita dapat memasukkan nilai yang berbeda untuk memperoleh hasil yang diinginkan.
 
-Notice that we can call the same function twice which means we do not have to write the same code again.
+Perhatikan bahwa kita dapat memanggil fungsi dua kali, yang artinya kita tidak perlu menuliskan kode yang sama lagi untuk menginginkan keluaran sama. 
 
-## Function Parameters 
+## Parameter Fungsi
 
-A function can take parameters, which are values you supply to the function so that the function can *do* something utilising those values. These parameters are just like variables except that the values of these variables are defined when we call the function and are already assigned values when the function runs.
+Fungsi dapat menerima parameter. Parameter adalah nilai yang Anda masukkan ke dalam fungsi, sehingga fungsi dapat *melakukan* sesuatu terhadap nilai tersebut. Parameter ini seperti variabel, namun Anda harus mendefinisikan nilainya dulu sebelum dimasukkan ke dalam fungsi, dan sudah memiliki nilai ketika fungsi tersebut dijalankan. 
 
-Parameters are specified within the pair of parentheses in the function definition, separated by commas. When we call the function, we supply the values in the same way.  Note the terminology used - the names given in the function definition are called *parameters* whereas the values you supply in the function call are called *arguments*.
+Parameter ditentukan di dalam tanda kurung saat fungsi didefinisikan, dipisahkan dengan koma. Saat kita memanggil fungsinya, kita memasukkan nilai terhadap parameter tersebut dengan jumlah dan cara yang sama. Sebagai catatan terhadap terminologi yang digunakan - nama yang diberikan ke dalam definisi fungsi dinamakan *parameter* sedangkan nilai yang diberikan dalam pemanggilan fungsi disebut *argumen*.
 
-Example (save as `func_param.py`):
+Contoh (simpan dengan nama `func_param.py`):
 
 ~~~python
 def printMax(a, b):
     if a > b:
-        print(a, 'is maximum')
+        print(a, 'adalah nilai maksimum')
     elif a == b:
-        print(a, 'is equal to', b)
+        print(a, 'adalah sama dengan', b)
     else:
-        print(b, 'is maximum')
+        print(b, 'adalah nilai maksimum')
 
-printMax(3, 4) # directly give literal values
+printMax(3, 4) # langsung diberikan nilai terhadap parameter a dan b saat fungsi dipanggil
 
 x = 5
 y = 7
 
-printMax(x, y) # give variables as arguments
+printMax(x, y) # memberi variabel sebagai argumen. Variabel ini harus didefinisikan dulu sebelumnya.
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 func_param.py
-4 is maximum
-7 is maximum
+4 adalah nilai maksimum
+7 adalah nilai maksimum
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-Here, we define a function called `printMax` that uses two parameters called `a` and `b`.  We find out the greater number using a simple `if..else` statement and then print the bigger number.
+Di sini, kita mendefinisikan fungsi dengan nama `printMax` yang menggunakan dua parameter yang disebut `a` dan `b`. Kita mencari angka yang lebih besar dengan menggunakan statemen `if..else` sederhana, lalu mencetak angka yang lebih besar. 
 
-The first time we call the function `printMax`, we directly supply the numbers as arguments. In the second case, we call the function with variables as arguments. `printMax(x, y)` causes the value of argument `x` to be assigned to parameter `a` and the value of argument `y` to be assigned to parameter `b`. The printMax function works the same way in both cases.
+Saat pertama kali kita panggil fungsi `printMax`, kita secara langsung memasukkan angka sebagai argumen. Dalam kasus kedua, kita memanggil fungsi dengan argumen berupa variabel. `printMax(x,y)` membuat nilai yang argumen `x` dimasukkan dalam parameter `a` dan nilai dari argumen `y` dimasukkan dalam parameter `b`. Fungsi `printMax` berfungsi sama saja di kedua kasus tersebut.
 
-## Local Variables 
+## Variabel Lokal
 
-When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function - i.e. variable names are *local* to the function. This is called the *scope* of the variable. All variables have the scope of the block they are declared in starting from the point of definition of the name.
+Saat Anda mendeklarasikan variabel di dalam definisi fungsi, mereka tidak berhubungan dengan variabel lain dengan nama yang sama di luar fungsi - dengan kata lain nama variabel ini hanya berlaku secara lokal di dalam fungsi. Ini dinamakan *skup* (scope) dari variabel. Semua variabel memiliki blok skup saat dideklarasikan pertama kali.
 
-Example (save as `func_local.py`):
+Contoh (simpan dengan nama `func_local.py`):
 
 ~~~python
 x = 50
 
 def func(x):
-    print('x is', x)
+    print('x adalah', x)
     x = 2
-    print('Changed local x to', x)
+    print('Mengganti nilai lokal x ke ', x)
 
 func(x)
-print('x is still', x)
+print('x masih tetap', x)
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 func_local.py
-x is 50
-Changed local x to 2
-x is still 50
+x adalah 50
+Mengganti nilai lokal x ke 2
+x masih tetap 50
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The first time that we print the *value* of the name *x* with the first line in the function's body, Python uses the value of the parameter declared in the main block, above the function definition.
+Saat pertama kita mencetak *nilai* dari *x* di baris pertama badan fungsi, Python menggunakan nilai dari parameter yang dideklarasikan di blok utama, di atas definisi fungsi. 
 
-Next, we assign the value `2` to `x`. The name `x` is local to our function.  So, when we change the value of `x` in the function, the `x` defined in the main block remains unaffected.
+Lalu, kita memberikan nilai `2` kepada `x`. Jadi nama `x` hanya bernilai di lokal, di dalam fungsi. Saat kita mengganti nilai `x` yang berada di dalam fungsi, nilai `x` yang berada di blok utama tetap tidak terpengaruh. 
 
-With the last `print` function call, we display the value of `x` as defined in the main block, thereby confirming that it is actually unaffected by the local assignment within the previously called function.
+Dengan pemanggilan fungsi `print` di baris terakhir, kita menampilkan nilai `x` yang berasal dari blok utama, sehingga hal ini dapat mengonfirmasi bahwa nilai tersebut benar-benar tidak terpengaruh oleh nilai lokal yang diganti dalam fungsi sebelumnya. 
 
-## Using The global Statement
+## Menggunakan Statemen Global
 
-If you want to assign a value to a name defined at the top level of the program (i.e. not inside any kind of scope such as functions or classes), then you have to tell Python that the name is not local, but it is *global*. We do this using the `global` statement. It is impossible to assign a value to a variable defined outside a function without the `global` statement.
+Jika Anda ingin memberi nilai terhadap satu variabel yang didefinisikan di level tertinggi dalam satu program (atau dengan kata lain tidak berada di dalam skup apapun, baik fungsi maupun `class`), Anda harus memberitahu Python bahwa nama tersebut bukan local, tapi *global~. Kita melakukannya dengan statemen `global`. Tidak mungkin membrikan nilai di dalam variabel di luar fungsi tanpa statemen `global`.
 
-You can use the values of such variables defined outside the function (assuming there is no variable with the same name within the function). However, this is not encouraged and should be avoided since it becomes unclear to the reader of the program as to where that variable's definition is. Using the `global` statement makes it amply clear that the variable is defined in an outermost block.
+Anda dapat menggunakan nilai dari variabel yang didefinisikan di luar fungsi (asumsikan bahwa tidak ada nama variabel yang sama di dalam fungsi). Bagaimanapun juga, ini sangat tidak disarankan dan Anda harus menghindarinya mengingat hal tersebut akan membingungkan pembaca program tentang di mana definisi variabelnya. Menggunakan statemen `global` membuatna jelas bahwa variable yang bersangkutan didefinisikan di luar blok. 
 
-Example (save as `func_global.py`):
+Contoh (simpan dengan nama `func_global.py`):
 
 ~~~python
 x = 50
@@ -119,150 +119,150 @@ x = 50
 def func():
     global x
 
-    print('x is', x)
+    print('x adalah ', x)
     x = 2
-    print('Changed global x to', x)
+    print('Mengganti nilai global x ke', x)
 
 func()
-print('Value of x is', x)
+print('Nilai dari x adalah ', x)
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 func_global.py
-x is 50
-Changed global x to 2
-Value of x is 2
+x adalah 50
+Mengganti nilai global x ke 2
+Nilai dari x adalah 2
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The `global` statement is used to declare that `x` is a global variable - hence, when we assign a value to `x` inside the function, that change is reflected when we use the value of `x` in the main block.
+Statemen `global` digunakan untuk mendeklarasikan `x` - membuatnya menjadi variabel global - sehingga, saat kita mengganti nilai `x` di dalam fungsi, perubahan tersebut akan berlaku juga pada saat kita menggunakan nilai `x` di blok utama. 
 
-You can specify more than one global variable using the same `global` statement e.g. `global x, y, z`.
+Anda dapat menentukan lebih dari satu variabel global, dengan menggunakan statemen `global` yang sama, misalnya `global x, y, z`.
 
-## Default Argument Values 
+## Nilai Argumen Baku 
 
-For some functions, you may want to make some parameters *optional* and use default values in case the user does not want to provide values for them. This is done with the help of default argument values. You can specify default argument values for parameters by appending to the parameter name in the function definition the assignment operator (`=`) followed by the default value.
+Untuk beberapa fungsi, Anda mungkin ingin membuat beberapa parameter *tidak wajib* diisi, dan menggunakan nilai baku pada saat pengguna tidak ingin memberikan nilai terhadapnya. Ini dapat dilakukan dengan bantuan nilai argumen baku. Anda dapat menentukan nilai arguman baku untuk parameter yang diberikan, dengan menambahkan nilai baku lewat operator sama dengan (`=`).
 
-Note that the default argument value should be a constant. More precisely, the default argument value should be immutable - this is explained in detail in later chapters. For now, just remember this.
+Catat bahwa nilai arguman baku haruslah berupa konstanta. Lebih tepatnya, nilai argumen baku harus bersifat immutable - ini akan dijelaskan di bab berikutnya. Untuk sekarang Anda hanya perlu mengingatnya.
 
-Example (save as `func_default.py`):
+Contoh (simpan dengan nama `func_default.py`):
 
 ~~~python
-def say(message, times = 1):
-    print(message * times)
+def katakan(pesan, kali = 1):
+    print(pesan * kali)
 
-say('Hello')
-say('World', 5)
+katakan('Apakabar')
+katakan('Dunia', 5)
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 func_default.py
-Hello
-WorldWorldWorldWorldWorld
+Apakabar
+DuniaDuniaDuniaDuniaDunia
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The function named `say` is used to print a string as many times as specified. If we don't supply a value, then by default, the string is printed just once. We achieve this by specifying a default argument value of `1` to the parameter `times`.
+Fungsi yang bernama `katakan` digunakan untuk menampilkan string sebanyak yang ditentukan. Jika pengalinya tidak ditentukan, maka secara baku, string akan ditampilkan sebanyak sekali. Kita dapat melakukan ini dengan menentukan nilai argumen baku ke `1` untuk parameter `kali`.
 
-In the first usage of `say`, we supply only the string and it prints the string once. In the second usage of `say`, we supply both the string and an argument `5` stating that we want to *say* the string message 5 times.
+Jika dalam penggunaan `katakan` pertama, kita hanya mengisi string dan mennampilkannya sekali, maka dalam penggunaan `katakan` kedua, kita mengisikan string dan sebuah arguman `5` yang menyatakan bahwa kita ingin *mengatakan* string tersebut sebanyak 5 kali.
 
-Important
+Penting
 
-:   Only those parameters which are at the end of the parameter list can be given default argument values i.e. you cannot have a parameter with a default argument value preceding a parameter without a default argument value in the function's parameter list.
+:   Hanya parameter yang berada di akhir daftar parameter yang dapat diberikan nilai argumen baku, dengan kata lain Anda tidak boleh menentukan nilai argumen baku di depan parameter yang tidak memiliki nilai argumen baku.
 
-    This is because the values are assigned to the parameters by position. For example,`def func(a, b=5)` is valid, but `def func(a=5, b)` is *not valid*.
+    Ini karana nilai disematkan ke dalam parameter berdasarkan posisi. Sebagai contoh, `def fun(a, b=5)` dianggap valid, sedangkan `def func(a=5, b)` *tidak valid*.
 
-## Keyword Arguments 
+## Argumen Keyword 
 
-If you have some functions with many parameters and you want to specify only some of them, then you can give values for such parameters by naming them - this is called *keyword arguments* - we use the name (keyword) instead of the position (which we have been using all along) to specify the arguments to the function.
+Jika Anda memiliki fungsi dengan banyak parameter dan Anda hanya ingin menentukan beberapa saja, Anda dapat memberikan nilai terhadap parameter, dengan memberikan nama terhadapnya - ini disebut sebagai *argumen keyword* - kita gunakan kata (keyword) daripada posisi(yang selalu kita gunakan selama ini) untuk menentukan argumen terhadap fungsi.
 
-There are two *advantages* - one, using the function is easier since we do not need to worry about the order of the arguments. Two, we can give values to only those parameters to which we want to, provided that the other parameters have default argument values.
+Ada dua *keuntungan* - satu, menggunakan fungsi akan leibh mudah sebab kita tidak perlu khawatir terhadap urutan argumen. Kedua, kita dapat memberikan nilai hanya terhadap parameter yang kita inginkan, sebab parameter lain telah memiliki nilai baku.
 
-Example (save as `func_key.py`):
+Contoh (simpan dengan nama `func_key.py`):
 
 ~~~python
 def func(a, b=5, c=10):
-    print('a is', a, 'and b is', b, 'and c is', c)
+    print('a adalah ', a, ' dan b adalah ', b, ' dan c adalah ', c)
 
 func(3, 7)
 func(25, c=24)
 func(c=50, a=100)
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 func_key.py
-a is 3 and b is 7 and c is 10
-a is 25 and b is 5 and c is 24
-a is 100 and b is 5 and c is 50
+a adalah 3 dan b adalah 7 dan c adalah 10
+a adalah 325 dan b adalah 5 dan c adalah 24
+a  adalah 100 dan b adalah 5 dan c adalah 50
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The function named `func` has one parameter without a default argument value, followed by two parameters with default argument values.
+Fungsi tersebut bernama `func` dan hanya punya satu parameter tanpa nilai argumen baku, diikuti oleh dua parameter dengan nilai argumen baku.
 
-In the first usage, `func(3, 7)`, the parameter `a` gets the value `3`, the parameter `b` gets the value `7` and `c` gets the default value of `10`.
+Pada penggunaan pertama, `func(3, 7)`, parameter `a` memperoleh nilai `3`, parameter `b` memeperoleh nilai `7` dan `c` memperoleh nilai baku `10`.
 
-In the second usage `func(25, c=24)`, the variable `a` gets the value of 25 due to the position of the argument. Then, the parameter `c` gets the value of `24` due to naming i.e. keyword arguments. The variable `b` gets the default value of `5`.
+Pada penggunaan kedua, `func(25, c=24)`, parameter `a` memperoleh nilai 25 mengingat posisinya di dalam argumen. Kemudian parameter `c` memperoleh nilai `24` berkaitan dengan penamaan argumen keyword. Variabel `b` akan memperoleh nilai baku `5`.
 
-In the third usage `func(c=50, a=100)`, we use keyword arguments for all specified values. Notice that we are specifying the value for parameter `c` before that for `a` even though `a` is defined before `c` in the function definition.
+Dalam penggunaan ketiga `func(c=50, a=100)`, kita menggunakan argumen untuk seluruh nilai yang ditentukan. Perhatikan bahwa kita menentukan nilai untuk parameter `c` sebelum `a` didefinisikan.
 
-## VarArgs parameters
+## Parameter VarArgs
 
-Sometimes you might want to define a function that can take *any* number of parameters, this can be achieved by using the stars (save as `total.py`):
+Kadang Anda ingin mendefinisikan fungsi yang dapat mengambil parameter dalam jumlah *berapapun*, ini dapat dilakukan dengan menggunakan tanda bintang (simpan dengan nama `total.py`): 
 
 ~~~python
-def total(initial=5, *numbers, **keywords):
-    count = initial
-    for number in numbers:
-        count += number
-    for key in keywords:
-        count += keywords[key]
-    return count
+def total(awal=5, *angkas, **kuncis):
+    hitung = awal
+    for angka in angkas:
+        hitung += angka
+    for kunci in kuncis:
+        hitung += kuncis[kunci]
+    return hitung
 
-print(total(10, 1, 2, 3, vegetables=50, fruits=100))
+print(total(10, 1, 2, 3, sayur=50, buah=100))
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 total.py
 166
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-When we declare a starred parameter such as `*param`, then all the positional arguments from that point till the end are collected as a tuple called 'param'.
+Ketika kita mendefinisikan parameter bintang seperti `*param`, maka seluruh argumen setelahnya akan dikumpulkan ke dalam tuple yang disebut `param`.
 
-Similarly, when we declare a double-starred parameter such as `**param`, then all the keyword arguments from that point till the end are collected as a dictionary called 'param'.
+Mirip dengan itu, ketika kita mendeklarasikan parameter dua-bintang seperti `**param`, maka semua argumen dengan kata kunci akan dikumpulkan ke dalam dictionary yang disebut `param`.
 
-We will explore tuples and dictionaries in a [later chapter](#data-structures).
+Kita akan eksplorasi tentang tuples dan dictionaries di [bab berikutnya](#data-structures).
 
-## Keyword-only Parameters 
+## Parameter Keyword-Only
 
-If we want to specify certain keyword parameters to be available as keyword-only and *not* as positional arguments, they can be declared after a starred parameter (save as `keyword_only.py`):
+Jika kita ingin menentukan parameter keyword tertentu yang tersedia dalam bentuk keyword-only (hanya-keyword) dan *bukan* argumen yang bersifat posisional, hal tersebut dapat dideklarasikan setelah parameter berbintang (simpan dengan nama `keyword_only.py`):
 
 ~~~python
-def total(initial=5, *numbers, extra_number):
-    count = initial
-    for number in numbers:
-        count += number
-    count += extra_number
-    print(count)
+def total(awal=5, *angkas, angka_tambahan):
+    hitung = awal
+    for angka in angkas:
+        hitung += angka
+    hitung += angka_tambahan
+    print(hitung)
 
-total(10, 1, 2, 3, extra_number=50)
+total(10, 1, 2, 3, angka_tambahan=50)
 total(10, 1, 2, 3)
-# Raises error because we have not supplied a default argument value for 'extra_number'
+# Akan menampilkan pesan error, karena kita tidak memberikan argumen baku untuk nilai `angka_tambahan`
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 keyword_only.py
@@ -273,11 +273,11 @@ total(10, 1, 2, 3)
 TypeError: total() needs keyword-only argument extra_number
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-Declaring parameters after a starred parameter results in keyword-only arguments. If these arguments are not supplied a default value, then calls to the function will raise an error if the keyword argument is not supplied, as seen above.
+Mendeklarasikan parameter setelah parameter bintang akan menghasilkan agrumen keyword-only (hanya berupa keyword). Jika argumen ini tidak diberi nilai, maka pemanggilan fungsi akan menghasilkan pesan error sebagaimana terlihat di atas. 
 
-Notice the use of `+=` which is a shortcut operator, so instead of saying `x = x + y`, you can say `x += y`.
+Catat bahwa penggunaan `+=` merupakan jalan pintas. Jadi untuk mengatakan `x = x + y`, Anda dapat menuliskan `x += y`.
 
 If you want to have keyword-only arguments but have no need for a starred parameter, then simply use an empty star without using any name such as `def total(initial=5, *, extra_number)`.
 
