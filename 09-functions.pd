@@ -279,70 +279,70 @@ Mendeklarasikan parameter setelah parameter bintang akan menghasilkan agrumen ke
 
 Catat bahwa penggunaan `+=` merupakan jalan pintas. Jadi untuk mengatakan `x = x + y`, Anda dapat menuliskan `x += y`.
 
-If you want to have keyword-only arguments but have no need for a starred parameter, then simply use an empty star without using any name such as `def total(initial=5, *, extra_number)`.
+Jika Anda ingin memiliki argumen hanya-keyword, tapi tidak ingin menentukan nilai baku, cukup menggunakan bintang tanpa nama. contoh `def total(nilai_awal=5, *, nomor_tambahan)`. 
 
-## The return Statement 
+## Statemen return
 
-The `return` statement is used to *return* from a function i.e. break out of the function. We can optionally *return a value* from the function as well.
+Statemen `return` digunakan untuk *mengembalikan* nilai dari sebuah fungsi, juga merupakan pemotong/akhir dari sebuah fungsi. Nilai `return` juga dapat digunakan untuk *mengembalikan nilai* dari sebuah fungsi.
 
-Example (save as `func_return.py`):
+Contoh (simpan dengan nama `func_return.py`):
 
 ~~~python
 def maximum(x, y):
     if x > y:
         return x
     elif x == y:
-        return 'The numbers are equal'
+        return 'Nilai angkanya sama'
     else:
         return y
 
 print(maximum(2, 3))
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 func_return.py
 3
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The `maximum` function returns the maximum of the parameters, in this case the numbers supplied to the function. It uses a simple `if..else` statement to find the greater value and then *returns* that value.
+Fungsi `maximum` mengembalikan nilai maksimal dari seluruh parameter yang diberikan, dalam hal ini seluruh angka yang dimasukkan ke dalam fungsi tersebut. Fungsi ini menggunakan statemen `if..else` yang sederha untuk mencari nilai lebih besar dari seluruh nilai, lalu *mengembalikan* hasilnya. 
 
-Note that a `return` statement without a value is equivalent to `return None`. `None` is a special type in Python that represents nothingness. For example, it is used to indicate that a variable has no value if it has a value of `None`.
+Catat bahwa statemen `return` tanpa nilai sama dengan `return None`. `None` adalah jenis yang sangat khusus di Python yang mewakili kosong. Sebagai contoh, `None` digunakan untuk mengindikasikan bahwa sebuah variabel tidak memiliki nilai jika nilai yang dimilikinya `None`. 
 
-Every function implicitly contains a `return None` statement at the end unless you have written your own `return` statement. You can see this by running `print(someFunction())` where the function `someFunction` does not use the `return` statement such as:
+Setiap fungsi secara implisit memiliki `return None` meskipun Anda tidak menuliskannya. Kecuali Anda mendefinisikan sendiri nilai dari statemen `return`. Anda dapat melihat ini dengan menjalankan `print(sebuahFungsi())` dimana `sebuahFungsi` tersebut tidak memiliki statemen `return`, seperti: 
 
 ~~~python
-def someFunction():
+def sebuahFungsi():
     pass
 ~~~
 
-The `pass` statement is used in Python to indicate an empty block of statements.
+Statemen `pass` digunakan di Python untuk mengindikasikan blok statemen yang kosong. 
 
-Note
+Catatan
 
-:   There is a built-in function called `max` that already implements the 'find maximum' functionality, so use this built-in function whenever possible.
+:   Ada fungsi built-in yang bernama `max` yang sudah mengimplementasikan fungsi 'find maximum', jadi gunakan fungsi built-in sebisa mungkin.
 
 ## DocStrings 
 
-Python has a nifty feature called *documentation strings*, usually referred to by its shorter name *docstrings*. DocStrings are an important tool that you should make use of since it helps to document the program better and makes it easier to understand. Amazingly, we can even get the docstring back from, say a function, when the program is actually running!
+Python memiliki fungsi yang keren bernama *documentation strings*, biasanya dirujuk dengan nama yang lebih pendek *docstrings*. DocStrings sangat penting dan Anda harus menggunakannya karene fungsi tersebut dapat mendokumentasikan program secara lebih baik dan lebih mudah untuk dipahami. Kerennya, kita bisa mengambil docstring dari sebuah fungsi, meskipun program tersebut masih berjalan!
 
-Example (save as `func_doc.py`):
+Contoh (simpan dengan nama `func_doc.py`):
 
 ~~~python
 def printMax(x, y):
-    '''Prints the maximum of two numbers.
+    '''Mencetak nilai maksimal dari dua angka.
 
-    The two values must be integers.'''
-    x = int(x) # convert to integers, if possible
+    Kedua angka yang diberikan harus berupa integer.'''
+    x = int(x) # konversi ke integer, jika memungkinkan
     y = int(y)
 
     if x > y:
-        print(x, 'is maximum')
+        print(x, ' adalah nilai paling tinggi)
     else:
-        print(y, 'is maximum')
+        print(y, ' adalah nilai paling tinggi')
 
 printMax(3, 5)
 print(printMax.__doc__)
@@ -352,26 +352,26 @@ Output:
 
 ~~~
 $ python3 func_doc.py
-5 is maximum
-Prints the maximum of two numbers.
+5 adalah nilai paling tinggi
+Mencetak nilai maksimal dari dua angka.
 
-        The two values must be integers.
+        Kedua angka yang diberikan harus berupa integer.
 ~~~
 
-How It Works:
+Bagaimana cara kerjanya:
 
-A string on the first logical line of a function is the *docstring* for that function. Note that DocStrings also apply to [Modules](#modules) and [classes](#object-oriented-programming) which we will learn about in the respective chapters.
+String dari baris logis pertama dari sebuah fungsi adalah *docstring* dari fungsi tersebut. Catat bahwa DocStrings juga berlaku untuk [Modules](#modules) dan [classes](#object-oriented-programming) yang akan kita pelajari di bab berikutnya. 
 
-The convention followed for a docstring is a multi-line string where the first line starts with a capital letter and ends with a dot. Then the second line is blank followed by any detailed explanation starting from the third line. You are *strongly advised* to follow this convention for all your docstrings for all your non-trivial functions.
+Konvensi yang harus diikuti untuk sebuah docstring, adalah bahwa dia string dengan beris lebih dari satu di mana kata pertama dimulai dengan huruf besar dan diakhiri dengan tanda titik. Kemudian baris kedua dikosongkan, diikuti dengan penjelasan detail di baris ketiga. Anda *sangat disarankan* untuk mengikuti aturan ini untuk semua docstring bagi semua fungsi rumit Anda. 
 
-We can access the docstring of the `printMax` function using the `__doc__` (notice the *double underscores*) attribute (name belonging to) of the function. Just remember that Python treats *everything* as an object and this includes functions. We'll learn more about objects in the chapter on [classes](#object-oriented-programming).
+Kita dapat mengakses docstring dari fungsi `printMax` dengan menggunakan atribut `__doc__` (perhatikan *dua garis bawah*) yang merupakan milik dari fungsi tersebut. Ingat bahwa Python memperlakukan *semuanya* sebagai object, termasuk fungsi ini. Kita akan belajar tentang object di bab berikutnya di [classes](#object-oriented-programming).
 
-If you have used `help()` in Python, then you have already seen the usage of docstrings! What it does is just fetch the `__doc__` attribute of that function and displays it in a neat manner for you. You can try it out on the function above - just include `help(printMax)` in your program. Remember to press the `q` key to exit `help`.
+Jika Anda telah menggunakan `help()` di Oython, Anda sudah pernah melihat penggunaan docstring! Apa yang dilakukan oleh `help()` hanyalah mengambil atribut `__doc__` dan menampilkannya dalam format yang bagus untuk Anda. Silakan Anda coba fungsi di atas - cukup masukkan `help(printMax)` di program Anda. Selalu ingat untuk menekan tombol `d` untuk keluar dari `help`.
 
-Automated tools can retrieve the documentation from your program in this manner. Therefore, I *strongly recommend* that you use docstrings for any non-trivial function that you write. The `pydoc` command that comes with your Python distribution works similarly to `help()` using docstrings.
+Beberapa program bantu otomatis dapat mengambil dokumentasi dari program dengan cara ini. Sehingga, saya *sangat menyarankan* Anda untuk menggunakan docstrings untuk fungsi-fungsi rumit yang Anda tulis. Perintah `pydoc` yang tersedia di distribusi Python Anda, cara kerjanya mirip `help()` menggunakan docstrings. 
 
-## Summary 
+## Ringkasan
 
-We have seen so many aspects of functions but note that we still haven't covered all aspects of them. However, we have already covered most of what you'll use regarding Python functions on an everyday basis.
+Kita sudah lihat banyak aspek dari sebuah fungsi, namun tolong dicatat bahwa belum semua aspek sudah dibahas. Bagaimanapun juga, jita telah membicarakan banyak aspek yang nantinya akan Anda gunakan sebagai fungsi Python dalam tugas sehari-hari.
 
-Next, we will see how to use as well as create Python modules.
+Berikutnya, kita akan melihat bagaimana cara membuat modul Python.
