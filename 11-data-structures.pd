@@ -1,136 +1,137 @@
-# Data Structures
+# Struktur Data
 
-Data structures are basically just that - they are *structures* which can hold some *data* together. In other words, they are used to store a collection of related data.
+Struktur data pada dasarnya merupakan *struktur* yang dapat menyimpan *data* secara bersama-sama. Dengan kata lain, mereka digunakan untuk menyimpan koleksi data yang berkaitan satu sama lain.
 
-There are four built-in data structures in Python - list, tuple, dictionary and set. We will see how to use each of them and how they make life easier for us.
+Ada empat struktur data built-in di Python - list, tuple, dictionary dan set. Kita akan lihat bagaimana penggunaan masing-masing dan bagaimana struktur data tersebut dapat mempermudah hidup kita. 
 
 ## List 
 
-A `list` is a data structure that holds an ordered collection of items i.e. you can store a *sequence* of items in a list. This is easy to imagine if you can think of a shopping list where you have a list of items to buy, except that you probably have each item on a separate line in your shopping list whereas in Python you put commas in between them.
+`list` adalah struktur data yang meyimpan koleksi item yang ditempatkan secara berurut. Misalnya Anda dapat menyimpan item *berurut(sequence)* di dalam list. Hal itu sangat mudah dimengerti jika Anda dapat membayangkan daftar belanja, di mana Anda punya daftar item yang harus dibeli. Namun jika di daftar belanja Anda membariskan item dengan baris baru, di Python Anda cukup meletakkan koma di antaranya. 
 
-The list of items should be enclosed in square brackets so that Python understands that you are specifying a list. Once you have created a list, you can add, remove or search for items in the list. Since we can add and remove items, we say that a list is a *mutable* data type i.e. this type can be altered.
+Penulisan list harus diapit dalam tanda kurung kotak (square bracket), sehingga Python dapat memahami bahwa Anda sedang membuat list. Sekali Anda buat list, Anda dapat menambah, menghapus atau mencari item di dalam list. Karena kita bisa menambah dan menguranginya, kita dapat katakan bahwa list termasuk tipe data *mutable* - yang berarti nilainya bisa diganti. 
 
-### Quick Introduction To Objects And Classes 
+### Pengenalan Singkat Object (Obyek) dan Classes (Kelas) 
 
-Although I've been generally delaying the discussion of objects and classes till now, a little explanation is needed right now so that you can understand lists better. We will explore this topic in detail in a [later chapter](#object-oriented-programming).
+Meskipun saya menunda pembahasan tentang object dan class hingga sekarang, saat ini penjelasan sedikit dibutuhkan sehingga Anda dapat memahami list secara lebih baik. Kita akan mengeksplorasi topik ini secara lebih detail di [bab berikutnya](#pemrograman-berbasis-obyek). 
 
-A list is an example of usage of objects and classes. When we use a variable `i` and assign a value to it, say integer `5` to it, you can think of it as creating an **object** (i.e. instance) `i` of **class** (i.e. type) `int`. In fact, you can read `help(int)` to understand this better.
+List adalah contoh yang bisa dipahami tentang penggunaan object dan class. Ketika kita menggunakan variabel bernama `i` dan memberi nilai terhadap variabel tersebut, misalnya integer `5`, Anda dapat berpikir membuat **object** (berupa instance) `i` dari **class** (berupa tipe) `int`. Sebagai bantuan, Anda dapat membaca `help(int)` untuk memahaminya lebih baik. 
 
-A class can also have **methods** i.e. functions defined for use with respect to that class only. You can use these pieces of functionality only when you have an object of that class. For example, Python provides an `append` method for the `list` class which allows you to add an item to the end of the list. For example, `mylist.append('an item')` will add that string to the list `mylist`. Note the use of dotted notation for accessing methods of the objects.
+Sebuah class juga memiliki **methods/metode** berupa fungsi yang didefinisikan khusus hanya untuk class tersebut. Anda dapat menggunakan fungsi bagian ini, jika dan hanya jika Anda mendeklarasikan obyek dari class tersebut. Sebagai contoh, Python memberikan metode `append` untuk class `list` yang memungkinkan Anda menambah item di akhir list. Misalnya `listku.append('sesuatu') yang akan menambahkan string tersebut (sesuatu) di akhir `listku`. Perhatikan penggunaan notasi bertitik untuk mengakses method dari sebuah object.
 
-A class can also have **fields** which are nothing but variables defined for use with respect to that class only. You can use these variables/names only when you have an object of that class. Fields are also accessed by the dotted notation, for example, `mylist.field`.
+Sebuah class juga punya **fields** yang merupakan variabel tapi hanya digunakan untuk class tersebut. Anda dapat menggunakan variabel atau nama ini, hanya ketika Anda mendeklarasikan obyek dari kelas tersebut. Fields juga diakses lewat notasi bertiti, sebagai contoh, `listku.field`.
 
-Example (save as `using_list.py`):
+Contoh (simpan dengan nama `menggunakan_list.py`):
 
 ~~~python
-# This is my shopping list
-shoplist = ['apple', 'mango', 'carrot', 'banana']
+# Berikut adalah daftar belanja saya
+daftarbelanja = ['apel', 'mangga', 'wortel', 'pisang']
 
-print('I have', len(shoplist), 'items to purchase.')
+print('Saya memiliki ', len(daftarbelanja), ' barang untuk dibeli.')
 
-print('These items are:', end=' ')
-for item in shoplist:
+print('Barang tersebut adalah:', end=' ')
+for item in daftarbelanja:
     print(item, end=' ')
 
-print('\nI also have to buy rice.')
-shoplist.append('rice')
-print('My shopping list is now', shoplist)
+print('\nSaya juga harus membeli beras.')
+daftarbelanja.append('beras')
+print('Daftar belanja saya sekarang', shoplist)
 
-print('I will sort my list now')
-shoplist.sort()
-print('Sorted shopping list is', shoplist)
+print('Saya akan mengurutkan daftar saya sekarang')
+daftarbelanja.sort()
+print('Daftar belanja yang sudah diurutkan adalah', shoplist)
 
-print('The first item I will buy is', shoplist[0])
-olditem = shoplist[0]
-del shoplist[0]
-print('I bought the', olditem)
-print('My shopping list is now', shoplist)
+print('Barang pertama yang akan saya beli adalah', shoplist[0])
+olditem = daftarbelanja[0]
+del daftarbelanja[0]
+print('Saya telah membeli', olditem)
+print('Daftar belanja saya sekarang ', daftarbelanja)
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
-$ python3 using_list.py
-I have 4 items to purchase.
-These items are: apple mango carrot banana
-I also have to buy rice.
-My shopping list is now ['apple', 'mango', 'carrot', 'banana', 'rice']
-I will sort my list now
-Sorted shopping list is ['apple', 'banana', 'carrot', 'mango', 'rice']
-The first item I will buy is apple
-I bought the apple
-My shopping list is now ['banana', 'carrot', 'mango', 'rice']
+$ python3 menggunakan_list.py
+Saya memiliki 4 barang untuk dibeli.
+Barang tersebut adalah: apel mangga wortel pisang
+Saya juga harus membeli beras.
+Daftar belanja saya sekarang ['apel', 'mangga', 'wortel', 'pisang', 'beras']
+Saya akan mengurutkan daftar saya sekarang
+Daftar belanja yang sudah diurutkan adalah ['apel', 'beras', 'mangga', 'pisang', 'wortel']
+Barang pertama yang akan saya beli adalah apel
+Saya telah membeli apel
+Daftar belanja saya sekarang ['beras', 'mangga', 'pisang', 'wortel']
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The variable `shoplist` is a shopping list for someone who is going to the market. In `shoplist`, we only store strings of the names of the items to buy but you can add *any kind of object* to a list including numbers and even other lists.
+Variabel `daftarbelanja` adalah daftar belanja seseorang yang akan pergi ke pasar. Di dalam `daftarbelanja`, kita hanya menyimpan nama string yang akan dibeli, tapi Anda dapat menambahkan *segala macam jenis obyek* ke dalam daftar, termasuk angka, bahkan bisa juga list lainnya. 
 
-We have also used the `for..in` loop to iterate through the items of the list. By now, you must have realised that a list is also a sequence. The speciality of sequences will be discussed in a [later section](#sequence).
+Kita juga dapat menggunakan putaran `for..in` untuk mengulangi seluruh item di dalam list. Sekarang, harusnya Anda juga sudah mulai memahami bahwa list juga merupakan urutan (sequence). Kekhususan dari sequence akan didiskusikan di [bagian berikutnya](#sequence). 
 
-Notice the use of the `end` keyword argument to the `print` function to indicate that we want to end the output with a space instead of the usual line break.
+Perhatikan bahwa argumen keyword `end` di dalam fungsi `print` mengindikasikan bahwa kita ingin outputnya diakhiri dengan spasi daripada baris baru seperti biasanya. 
 
-Next, we add an item to the list using the `append` method of the list object, as already discussed before. Then, we check that the item has been indeed added to the list by printing the contents of the list by simply passing the list to the `print` statement which prints it neatly.
+Berikutnya, kita menambahkan item ke dalam list dengan menggunakan metode `append` ke dalam object list, sebagaimana telah didiskusikan sebelumnya. Lalu kita periksa apakah itemnya sudah dimasukkan ke dalam list atau belum dengan mencetaknya ke layar dengan rapi, cukup dengan memberikan perintah `print`. 
 
-Then, we sort the list by using the `sort` method of the list. It is important to understand that this method affects the list itself and does not return a modified list - this is different from the way strings work. This is what we mean by saying that lists are *mutable* and that strings are *immutable*.
+Lalu kita sortir listnya dengan menggunakan metode `sort`. Penting untuk dipahami bahwa metode ini akan berpengaruh ke dalam listnya sendiri, dan tidak akan mengembalikan list yang telah dimodifikasi. Hal ini berbeda dengan cara kerja string. Ini kenapa list disebut sebagai *mutable* sedangkan string disebut *immutable*.
 
-Next, when we finish buying an item in the market, we want to remove it from the list. We achieve this by using the `del` statement. Here, we mention which item of the list we want to remove and the `del` statement removes it from the list for us.  We specify that we want to remove the first item from the list and hence we use `del shoplist[0]` (remember that Python starts counting from 0).
+Selanjutnya, ketika kita selesai belanja di pasar, kita akan menghapus item yang sudah dibeli dari daftar. Ini dapat dilakukan dengan menggunakan perintah `del`. Di sini cukup dimasukkan item-item yang akan dihapus, statemen `del` akan menghapuskannya untuk kita. Kita menentukan item pertama dari daftar yang akan dihapus mulai dari 0, sehingga perintahnya adalah `del shoplist[0]` (ingat bahwa Python selalu mulai penghitungan dari 0). 
 
-If you want to know all the methods defined by the list object, see `help(list)` for details.
+Jika Anda ingin tahu semua metode yang didefinisikan oleh object list, ketikkan `help(list)` dari konsol python untuk detailnya. 
 
 ## Tuple 
 
-Tuples are used to hold together multiple objects. Think of them as similar to lists, but without the extensive functionality that the list class gives you. One major feature of tuples is that they are **immutable** like strings i.e. you cannot modify tuples.
+Tuples digunakan untuk menyimpan object lebih dari satu secara bersamaan. Bayangkan hal ini mirip dengan list, tapi tanpa fungsi yang diberikan class list untuk Anda. Salah satu fitur tuples adalah **immutable** seperti string. Dengan kata lain Anda tidak bisa modifikasi tuples. 
 
-Tuples are defined by specifying items separated by commas within an optional pair of parentheses.
+Tuples didefinisikan dengan menentukan item dipisahkan oleh koma, dengan tambahan pilihan dalam kurung (tidak wajib). 
 
-Tuples are usually used in cases where a statement or a user-defined function can safely assume that the collection of values i.e. the tuple of values used will not change.
+Tuples biasanya digunakan dalam kasus di mana sebuah statemen atau fungsi yang didefinisikan sendiri dapat berasumsi bahwa nilai di dalamnya tidak berubah. Atau dengan kata lain nilai dari sebuah tuple tidak akan pernah berubah. 
 
-Example (save as `using_tuple.py`):
+Contoh (simpan dengan nama `menggunakan_tuple.py`):
 
 ~~~python
-zoo = ('python', 'elephant', 'penguin') # remember the parentheses are optional
-print('Number of animals in the zoo is', len(zoo))
+bonbin = ('piton', 'gajah', 'penguin') # ingat bahwa tanda kurung tidak wajib
+print('Hewan di kebon binatang berjumlah ', len(bonbin))
 
-new_zoo = 'monkey', 'camel', zoo
-print('Number of cages in the new zoo is', len(new_zoo))
-print('All animals in new zoo are', new_zoo)
-print('Animals brought from old zoo are', new_zoo[2])
-print('Last animal brought from old zoo is', new_zoo[2][2])
-print('Number of animals in the new zoo is', len(new_zoo)-1+len(new_zoo[2]))
+bonbin_baru = 'monyet', 'onta', bonbin
+print('Kerangkeng di kebun binatang baru berjumlah ', len(bonbin_baru))
+print('Semua binatang di kebun binatang terdiri', bonbin_baru)
+print('Binatang yang dibawa dari kebun binatang lama adalah ', bonbin_baru[2])
+print('Binatang terakhir yang dibawa dari kebun binatang lama adalah', bonbin_baru[2][2])
+print('Jumlah seluruh binatang adalah', len(bonbin_baru)-1+len(bonbin_baru[2]))
 ~~~
 
-Output:
+Keluaran:
 
 ~~~
 $ python3 using_tuple.py
-Number of animals in the zoo is 3
-Number of cages in the new zoo is 3
-All animals in new zoo are ('monkey', 'camel', ('python', 'elephant', 'penguin'))
-Animals brought from old zoo are ('python', 'elephant', 'penguin')
-Last animal brought from old zoo is penguin
-Number of animals in the new zoo is 5
+Hewan di kebon binatang berjumlah 3
+Kerangkeng di kebun binatang baru berjumlah 3
+Semua binatang di kebun binatang terdiri ('monyet', 'onta', ('piton', 'gajah', 'penguin'))
+Binatang yang dibawa dari kebun binatang lama adalah  ('piton', 'gajah', 'penguin')
+Binatang terakhir yang dibawa dari kebun binatang lama adalah penguin
+Jumlah seluruh binatang adalah 5
+
 ~~~
 
-How It Works:
+Bagaimana Cara Kerjanya:
 
-The variable `zoo` refers to a tuple of items. We see that the `len` function can be used to get the length of the tuple. This also indicates that a tuple is a [sequence](#sequence) as well.
+Variabel `bonbin` merujuk pada sebuah tuple. Kita lihat bahwa fungsi `len` dapat digunakan untuk mencari panjang sebuah tuple. Ini juga mengindikasikan bahwa tuple juga merupakan [sequence](#sequence).
 
-We are now shifting these animals to a new zoo since the old zoo is being closed. Therefore, the `new_zoo` tuple contains some animals which are already there along with the animals brought over from the old zoo. Back to reality, note that a tuple within a tuple does not lose its identity.
+Kita sekarang memindahkan binatang-binatang ini ke dalam kebun binatang baru mengingat kebun binatang lama sudah ditutup. Sehingga, tuple `bonbin_baru` berisi binatang-binatang yang sebelumnya sudah ada, dan binatang yang dibawa dari kebon binatang lama. Kembali ke dunia nyata, catat bahwa tuple di dalam tuple tidak pernah kehilangan identitas. 
 
-We can access the items in the tuple by specifying the item's position within a pair of square brackets just like we did for lists. This is called the *indexing* operator. We access the third item in `new_zoo` by specifying `new_zoo[2]` and we access the third item within the third item in the `new_zoo` tuple by specifying `new_zoo[2][2]`. This is pretty simple once you've understood the idiom.
+Kita dapat mengakses item di dalam tuple, dengan menyebutkan posisi item di dalam tanda kurung kotak sebagaimana yang telah kita lakukan terhadap lists. Ini dinamakan operator *indexing*. Kita mengakses item ketiga dari `bonbin_baru` dengan menyebutkan `bonbin_baru[2]` dan kita mengakses item ketiga di dalam item ketiga tuple `bonbin_baru` dengan menyebutkan `bonbin_baru[2][2]`. Ini cukup mudah jika Anda memahami idiomnya. 
 
-Parentheses
+Tanda Dalam Kurung (parentheses)
 
-:   Although the parentheses are optional, I prefer always having them to make it obvious that it is a tuple, especially because it avoids ambiguity. For example, `print(1,2,3)` and `print( (1,2,3) )` mean two different things - the former prints three numbers whereas the latter prints a tuple (which contains three numbers).
+:   Meskipun dalam kurung tidak bersifat wajib, Saya lebih anjurkan untuk selalu menggunakannya, untuk menunjukkan hal tersebut adalah tuple. Hal ini menghindari ambiguitas. Sebagai contoh `print(1,2,3)` dan `print( (1,2,3) )` memiliki arti yang berbeda - di mana print yang pertama menetak tiga angka, sedangkan print kedua mencetak sebuah tuple (yang berisi tiga angka). 
 
-Tuple with 0 or 1 items
+Tuple dengan item 0 atau 1
 
-:   An empty tuple is constructed by an empty pair of parentheses such as `myempty = ()`. However, a tuple with a single item is not so simple. You have to specify it using a comma following the first (and only) item so that Python can differentiate between a tuple and a pair of parentheses surrounding the object in an expression i.e. you have to specify `singleton = (2 , )` if you mean you want a tuple containing the item `2`.
+:   Sebuah tuple kosong dibuat dari tanda kurung kosong, seperti misalnya `kosong = ()`. Bagaimanapun juga, tuple dengan satu item tidak sesederhana itu. Anda harus menyebutkannya dengan koma diikuti dengan item pertama (dan satu-satunya) sehingga Python dapat membedakan antara tuple dengan tanda kurung berpasangan yang mengelilingi ekspresi obyek. Anda harus menyebutkan `singleton = (2,)` jika Anda ingin membuat sebuah tuple yang berisi angka `2`.
 
-Note for Perl programmers
+Catatan untuk programmer Perl
 
-:   A list within a list does not lose its identity i.e. lists are not flattened as in Perl. The same applies to a tuple within a tuple, or a tuple within a list, or a list within a tuple, etc. As far as Python is concerned, they are just objects stored using another object, that's all.
+:   Sebuah list di dalam list tidak akan kehilangan identitas, dengan kata lain list tidak disatukan sebagaimana di dalam Perl. Ini juga berlaku untuk tuple di dalam tuple, atau list di dalam tuple dan seterusnya. Sejauh yang diperhatikan oleh Python, mereka hanyalah objects yang menyimpan objects lainnya. Tidak ada pertimbangan lain.
 
 ## Dictionary 
 
